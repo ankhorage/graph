@@ -4,6 +4,7 @@ export default createKnipConfig({
   entry: [
     'src/graph.ts',
     'examples/**/*.ts',
+    'paradox.config.ts',
     'eslint.config.mjs',
     'eslint.examples.config.mjs',
     'eslint.local.config.mjs',
