@@ -54,11 +54,9 @@ jobs:
 
       - name: Run format check
         run: |
-          if node -e "const p=require('./package.json'); process.exit(p.scripts?.['format:check'] ? 0 : 1)"; then
-            bun run format:check
-          else
-            echo "No format:check script found; skipping."
-          fi
+          bun run format
+          git diff -- package.json
+          git diff --exit-code
 
       - name: Run Knip
         run: |
