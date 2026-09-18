@@ -28,7 +28,9 @@ export function findStronglyConnectedComponents<NodeData, EdgeData>(
 }
 
 /*** Build sorted outgoing adjacency for graph traversal. */
-function buildAdjacency<NodeData, EdgeData>(graph: Graph<NodeData, EdgeData>): Map<string, string[]> {
+function buildAdjacency<NodeData, EdgeData>(
+  graph: Graph<NodeData, EdgeData>,
+): Map<string, string[]> {
   const adjacency = new Map(graph.nodes.map(({ id }) => [id, [] as string[]]));
   for (const edge of graph.edges) adjacency.get(edge.source)?.push(edge.target);
   for (const targets of adjacency.values()) targets.sort(compareText);
