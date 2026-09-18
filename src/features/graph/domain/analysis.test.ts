@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'bun:test';
 
 import { createGraph } from './createGraph.js';
-import { findCyclicComponents } from './findCyclicComponents.js';
 import { findCyclePath } from './findCyclePath.js';
+import { findCyclicComponents } from './findCyclicComponents.js';
 import { findStronglyConnectedComponents } from './findStronglyConnectedComponents.js';
 import { topologicalSort } from './topologicalSort.js';
 
