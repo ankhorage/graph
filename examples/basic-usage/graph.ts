@@ -1,5 +1,11 @@
 import { createGraph, getReachableNodeIds, topologicalSort } from '@ankhorage/graph';
 
+/***
+ * Create a directed graph, inspect reachability, and derive a topological order.
+ *
+ * @usage
+ * @readme
+ */
 const graph = createGraph({
   nodes: [
     { id: 'studio', data: { label: 'Studio' } },
