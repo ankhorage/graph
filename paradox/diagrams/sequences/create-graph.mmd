@@ -1,0 +1,5 @@
+sequenceDiagram
+  participant participant_assertUniqueIds as assertUniqueIds
+  participant participant_createGraph as createGraph
+  participant_createGraph->>participant_assertUniqueIds: assertUniqueIds()
+  participant_assertUniqueIds-->>participant_createGraph: return

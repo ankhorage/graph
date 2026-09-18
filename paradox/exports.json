@@ -1,0 +1,357 @@
+[
+  {
+    "name": "createGraph",
+    "description": "Create a deterministic graph and reject ambiguous or dangling identities.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/graph/domain/createGraph.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graph/domain/createGraph.ts",
+      "line": 4,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["Graph"],
+    "signatures": [
+      {
+        "label": "(input: Graph<NodeData, EdgeData>) => Graph<NodeData, EdgeData>",
+        "parameters": [
+          {
+            "name": "input",
+            "type": "Graph<NodeData, EdgeData>",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "Graph<NodeData, EdgeData>",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "filterGraph",
+    "description": "Project a graph by node and edge predicates while removing dangling edges.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/graph/domain/filterGraph.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graph/domain/filterGraph.ts",
+      "line": 5,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["Graph", "GraphEdge", "GraphNode"],
+    "signatures": [
+      {
+        "label": "(graph: Graph<NodeData, EdgeData>, options: { readonly node?: (node: GraphNode<NodeData>) => boolean; readonly edge?: (edge: GraphEdge<EdgeData>) => boolean; }) => Graph<NodeData, EdgeData>",
+        "parameters": [
+          {
+            "name": "graph",
+            "type": "Graph<NodeData, EdgeData>",
+            "required": true,
+            "description": null
+          },
+          {
+            "name": "options",
+            "type": "{ readonly node?: (node: GraphNode<NodeData>) => boolean; readonly edge?: (edge: GraphEdge<EdgeData>) => boolean; }",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "Graph<NodeData, EdgeData>",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "findCyclicComponents",
+    "description": "Return strongly connected components that represent graph cycles.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/graph/domain/findCyclicComponents.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graph/domain/findCyclicComponents.ts",
+      "line": 5,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["Graph"],
+    "signatures": [
+      {
+        "label": "(graph: Graph<NodeData, EdgeData>) => readonly (readonly string[])[]",
+        "parameters": [
+          {
+            "name": "graph",
+            "type": "Graph<NodeData, EdgeData>",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "readonly (readonly string[])[]",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "findStronglyConnectedComponents",
+    "description": "Return strongly connected components in deterministic node order.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+      "line": 5,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["Graph"],
+    "signatures": [
+      {
+        "label": "(graph: Graph<NodeData, EdgeData>) => readonly (readonly string[])[]",
+        "parameters": [
+          {
+            "name": "graph",
+            "type": "Graph<NodeData, EdgeData>",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "readonly (readonly string[])[]",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "getReachableNodeIds",
+    "description": "Return deterministic reachable node IDs from one graph node.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/graph/domain/getReachableNodeIds.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graph/domain/getReachableNodeIds.ts",
+      "line": 4,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["Graph"],
+    "signatures": [
+      {
+        "label": "(graph: Graph<NodeData, EdgeData>, startId: string, options?: { readonly direction?: \"incoming\" | \"outgoing\"; readonly includeStart?: boolean; }) => readonly string[]",
+        "parameters": [
+          {
+            "name": "graph",
+            "type": "Graph<NodeData, EdgeData>",
+            "required": true,
+            "description": null
+          },
+          {
+            "name": "options",
+            "type": "{ readonly direction?: \"incoming\" | \"outgoing\"; readonly includeStart?: boolean; }",
+            "required": false,
+            "description": null
+          },
+          {
+            "name": "startId",
+            "type": "string",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "readonly string[]",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "Graph",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/graph.ts",
+    "sourceLocation": {
+      "filePath": "src/types/graph.ts",
+      "line": 13,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["GraphEdge", "GraphNode"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "edges",
+        "kind": "property",
+        "type": "readonly GraphEdge<EdgeData>[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "nodes",
+        "kind": "property",
+        "type": "readonly GraphNode<NodeData>[]",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "GraphEdge",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/graph.ts",
+    "sourceLocation": {
+      "filePath": "src/types/graph.ts",
+      "line": 6,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "data",
+        "kind": "property",
+        "type": "EdgeData",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "id",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "source",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "target",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "GraphNode",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/graph.ts",
+    "sourceLocation": {
+      "filePath": "src/types/graph.ts",
+      "line": 1,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "data",
+        "kind": "property",
+        "type": "NodeData",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "id",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "reverseGraph",
+    "description": "Reverse every directed edge while preserving identities and metadata.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/graph/domain/reverseGraph.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graph/domain/reverseGraph.ts",
+      "line": 5,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["Graph"],
+    "signatures": [
+      {
+        "label": "(graph: Graph<NodeData, EdgeData>) => Graph<NodeData, EdgeData>",
+        "parameters": [
+          {
+            "name": "graph",
+            "type": "Graph<NodeData, EdgeData>",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "Graph<NodeData, EdgeData>",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "topologicalSort",
+    "description": "Return a deterministic topological node order, or null when the graph is cyclic.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/graph/domain/topologicalSort.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graph/domain/topologicalSort.ts",
+      "line": 4,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["Graph"],
+    "signatures": [
+      {
+        "label": "(graph: Graph<NodeData, EdgeData>) => readonly string[] | null",
+        "parameters": [
+          {
+            "name": "graph",
+            "type": "Graph<NodeData, EdgeData>",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "readonly string[] | null",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  }
+]

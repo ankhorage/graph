@@ -1,0 +1,5 @@
+sequenceDiagram
+  participant participant_buildAdjacency as buildAdjacency
+  participant participant_getReachableNodeIds as getReachableNodeIds
+  participant_getReachableNodeIds->>participant_buildAdjacency: buildAdjacency()
+  participant_buildAdjacency-->>participant_getReachableNodeIds: return
