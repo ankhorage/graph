@@ -1,5 +1,6 @@
 export { createGraph } from './features/graph/domain/createGraph.js';
 export { filterGraph } from './features/graph/domain/filterGraph.js';
+export { findCyclePath } from './features/graph/domain/findCyclePath.js';
 export { findCyclicComponents } from './features/graph/domain/findCyclicComponents.js';
 export { findStronglyConnectedComponents } from './features/graph/domain/findStronglyConnectedComponents.js';
 export { getReachableNodeIds } from './features/graph/domain/getReachableNodeIds.js';
