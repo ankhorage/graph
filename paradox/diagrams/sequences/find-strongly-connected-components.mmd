@@ -1,0 +1,24 @@
+sequenceDiagram
+  participant participant_assertUniqueIds as assertUniqueIds
+  participant participant_buildAdjacency as buildAdjacency
+  participant participant_collectComponent as collectComponent
+  participant participant_createGraph as createGraph
+  participant participant_findStronglyConnectedComponents as findStronglyConnectedComponents
+  participant participant_reverseGraph as reverseGraph
+  participant participant_visitPostOrder as visitPostOrder
+  participant_findStronglyConnectedComponents->>participant_buildAdjacency: buildAdjacency()
+  participant_buildAdjacency-->>participant_findStronglyConnectedComponents: return
+  participant_findStronglyConnectedComponents->>participant_visitPostOrder: visitPostOrder()
+  participant_visitPostOrder->>participant_visitPostOrder: visitPostOrder()
+  participant_visitPostOrder-->>participant_visitPostOrder: return
+  participant_visitPostOrder-->>participant_findStronglyConnectedComponents: return
+  participant_findStronglyConnectedComponents->>participant_reverseGraph: reverseGraph()
+  participant_reverseGraph->>participant_createGraph: createGraph()
+  participant_createGraph->>participant_assertUniqueIds: assertUniqueIds()
+  participant_assertUniqueIds-->>participant_createGraph: return
+  participant_createGraph-->>participant_reverseGraph: return
+  participant_reverseGraph-->>participant_findStronglyConnectedComponents: return
+  participant_findStronglyConnectedComponents->>participant_collectComponent: collectComponent()
+  participant_collectComponent->>participant_collectComponent: collectComponent()
+  participant_collectComponent-->>participant_collectComponent: return
+  participant_collectComponent-->>participant_findStronglyConnectedComponents: return

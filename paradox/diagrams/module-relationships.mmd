@@ -1,0 +1,35 @@
+graph LR
+  module_examples_basic_usage_graph_ts["examples/basic-usage/graph.ts"]
+  module_src_features_graph_domain_analysis_test_ts["src/features/graph/domain/analysis.test.ts"]
+  module_src_features_graph_domain_createGraph_test_ts["src/features/graph/domain/createGraph.test.ts"]
+  module_src_features_graph_domain_createGraph_ts["src/features/graph/domain/createGraph.ts"]
+  module_src_features_graph_domain_filterGraph_ts["src/features/graph/domain/filterGraph.ts"]
+  module_src_features_graph_domain_findCyclicComponents_ts["src/features/graph/domain/findCyclicComponents.ts"]
+  module_src_features_graph_domain_findStronglyConnectedComponents_ts["src/features/graph/domain/findStronglyConnectedComponents.ts"]
+  module_src_features_graph_domain_getReachableNodeIds_ts["src/features/graph/domain/getReachableNodeIds.ts"]
+  module_src_features_graph_domain_reverseGraph_ts["src/features/graph/domain/reverseGraph.ts"]
+  module_src_features_graph_domain_topologicalSort_ts["src/features/graph/domain/topologicalSort.ts"]
+  module_src_features_graph_domain_traversal_test_ts["src/features/graph/domain/traversal.test.ts"]
+  module_src_graph_ts["src/graph.ts"]
+  module_src_types_graph_ts["src/types/graph.ts"]
+  module_examples_basic_usage_graph_ts --> module_dist_graph_d_ts
+  module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_findCyclicComponents_ts
+  module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_findStronglyConnectedComponents_ts
+  module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_topologicalSort_ts
+  module_src_features_graph_domain_createGraph_test_ts --> module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_createGraph_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_filterGraph_ts --> module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_filterGraph_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_findCyclicComponents_ts --> module_src_features_graph_domain_findStronglyConnectedComponents_ts
+  module_src_features_graph_domain_findCyclicComponents_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_findStronglyConnectedComponents_ts --> module_src_features_graph_domain_reverseGraph_ts
+  module_src_features_graph_domain_findStronglyConnectedComponents_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_getReachableNodeIds_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_reverseGraph_ts --> module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_reverseGraph_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_topologicalSort_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_traversal_test_ts --> module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_traversal_test_ts --> module_src_features_graph_domain_filterGraph_ts
+  module_src_features_graph_domain_traversal_test_ts --> module_src_features_graph_domain_getReachableNodeIds_ts
+  module_src_features_graph_domain_traversal_test_ts --> module_src_features_graph_domain_reverseGraph_ts

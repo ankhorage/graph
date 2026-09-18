@@ -1,0 +1,1245 @@
+{
+  "packageName": "@ankhorage/graph",
+  "packageId": "@ankhorage/graph",
+  "description": "Canonical generic directed graph model and deterministic graph algorithms.",
+  "collaborators": null,
+  "donation": null,
+  "badges": [
+    {
+      "id": "license",
+      "label": "license",
+      "value": "MIT",
+      "color": "2563eb"
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "value": "v0.0.0",
+      "color": "cb3837"
+    },
+    {
+      "id": "runtime",
+      "label": "runtime",
+      "value": "bun",
+      "color": "f59e0b"
+    },
+    {
+      "id": "typescript",
+      "label": "typescript",
+      "value": "strict",
+      "color": "2563eb"
+    },
+    {
+      "id": "eslint",
+      "label": "eslint",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "prettier",
+      "label": "prettier",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "build",
+      "label": "build",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "tests",
+      "label": "tests",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "docs",
+      "label": "docs",
+      "value": "paradox",
+      "color": "0f766e"
+    }
+  ],
+  "usage": null,
+  "readmeUsageDescription": null,
+  "readmeUsage": [],
+  "readmeCli": null,
+  "readmeConfig": null,
+  "config": null,
+  "entrypoints": ["src/graph.ts"],
+  "modules": [
+    {
+      "path": "examples/basic-usage/graph.ts",
+      "isEntrypoint": false,
+      "dependencies": ["dist/graph.d.ts"],
+      "exports": []
+    },
+    {
+      "path": "src/features/graph/domain/analysis.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/graph/domain/createGraph.ts",
+        "src/features/graph/domain/findCyclicComponents.ts",
+        "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "src/features/graph/domain/topologicalSort.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/graph/domain/createGraph.test.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/graph/domain/createGraph.ts"],
+      "exports": []
+    },
+    {
+      "path": "src/features/graph/domain/createGraph.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/graph.ts"],
+      "exports": ["createGraph"]
+    },
+    {
+      "path": "src/features/graph/domain/filterGraph.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/graph/domain/createGraph.ts", "src/types/graph.ts"],
+      "exports": ["filterGraph"]
+    },
+    {
+      "path": "src/features/graph/domain/findCyclicComponents.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "src/types/graph.ts"
+      ],
+      "exports": ["findCyclicComponents"]
+    },
+    {
+      "path": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/graph/domain/reverseGraph.ts", "src/types/graph.ts"],
+      "exports": ["findStronglyConnectedComponents"]
+    },
+    {
+      "path": "src/features/graph/domain/getReachableNodeIds.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/graph.ts"],
+      "exports": ["getReachableNodeIds"]
+    },
+    {
+      "path": "src/features/graph/domain/reverseGraph.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/graph/domain/createGraph.ts", "src/types/graph.ts"],
+      "exports": ["reverseGraph"]
+    },
+    {
+      "path": "src/features/graph/domain/topologicalSort.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/graph.ts"],
+      "exports": ["topologicalSort"]
+    },
+    {
+      "path": "src/features/graph/domain/traversal.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/graph/domain/createGraph.ts",
+        "src/features/graph/domain/filterGraph.ts",
+        "src/features/graph/domain/getReachableNodeIds.ts",
+        "src/features/graph/domain/reverseGraph.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/graph.ts",
+      "isEntrypoint": true,
+      "dependencies": [],
+      "exports": [
+        "createGraph",
+        "filterGraph",
+        "findCyclicComponents",
+        "findStronglyConnectedComponents",
+        "getReachableNodeIds",
+        "Graph",
+        "GraphEdge",
+        "GraphNode",
+        "reverseGraph",
+        "topologicalSort"
+      ]
+    },
+    {
+      "path": "src/types/graph.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["Graph", "GraphEdge", "GraphNode"]
+    }
+  ],
+  "exports": [
+    {
+      "name": "createGraph",
+      "description": "Create a deterministic graph and reject ambiguous or dangling identities.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/graph/domain/createGraph.ts",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/createGraph.ts",
+        "line": 4,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": ["Graph"],
+      "signatures": [
+        {
+          "label": "(input: Graph<NodeData, EdgeData>) => Graph<NodeData, EdgeData>",
+          "parameters": [
+            {
+              "name": "input",
+              "type": "Graph<NodeData, EdgeData>",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "Graph<NodeData, EdgeData>",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "filterGraph",
+      "description": "Project a graph by node and edge predicates while removing dangling edges.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/graph/domain/filterGraph.ts",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/filterGraph.ts",
+        "line": 5,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": ["Graph", "GraphEdge", "GraphNode"],
+      "signatures": [
+        {
+          "label": "(graph: Graph<NodeData, EdgeData>, options: { readonly node?: (node: GraphNode<NodeData>) => boolean; readonly edge?: (edge: GraphEdge<EdgeData>) => boolean; }) => Graph<NodeData, EdgeData>",
+          "parameters": [
+            {
+              "name": "graph",
+              "type": "Graph<NodeData, EdgeData>",
+              "required": true,
+              "description": null
+            },
+            {
+              "name": "options",
+              "type": "{ readonly node?: (node: GraphNode<NodeData>) => boolean; readonly edge?: (edge: GraphEdge<EdgeData>) => boolean; }",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "Graph<NodeData, EdgeData>",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "findCyclicComponents",
+      "description": "Return strongly connected components that represent graph cycles.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/graph/domain/findCyclicComponents.ts",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/findCyclicComponents.ts",
+        "line": 5,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": ["Graph"],
+      "signatures": [
+        {
+          "label": "(graph: Graph<NodeData, EdgeData>) => readonly (readonly string[])[]",
+          "parameters": [
+            {
+              "name": "graph",
+              "type": "Graph<NodeData, EdgeData>",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "readonly (readonly string[])[]",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "findStronglyConnectedComponents",
+      "description": "Return strongly connected components in deterministic node order.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "line": 5,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": ["Graph"],
+      "signatures": [
+        {
+          "label": "(graph: Graph<NodeData, EdgeData>) => readonly (readonly string[])[]",
+          "parameters": [
+            {
+              "name": "graph",
+              "type": "Graph<NodeData, EdgeData>",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "readonly (readonly string[])[]",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "getReachableNodeIds",
+      "description": "Return deterministic reachable node IDs from one graph node.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/graph/domain/getReachableNodeIds.ts",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/getReachableNodeIds.ts",
+        "line": 4,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": ["Graph"],
+      "signatures": [
+        {
+          "label": "(graph: Graph<NodeData, EdgeData>, startId: string, options?: { readonly direction?: \"incoming\" | \"outgoing\"; readonly includeStart?: boolean; }) => readonly string[]",
+          "parameters": [
+            {
+              "name": "graph",
+              "type": "Graph<NodeData, EdgeData>",
+              "required": true,
+              "description": null
+            },
+            {
+              "name": "options",
+              "type": "{ readonly direction?: \"incoming\" | \"outgoing\"; readonly includeStart?: boolean; }",
+              "required": false,
+              "description": null
+            },
+            {
+              "name": "startId",
+              "type": "string",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "readonly string[]",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "Graph",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/graph.ts",
+      "sourceLocation": {
+        "filePath": "src/types/graph.ts",
+        "line": 13,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": ["GraphEdge", "GraphNode"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "edges",
+          "kind": "property",
+          "type": "readonly GraphEdge<EdgeData>[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "nodes",
+          "kind": "property",
+          "type": "readonly GraphNode<NodeData>[]",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "GraphEdge",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/graph.ts",
+      "sourceLocation": {
+        "filePath": "src/types/graph.ts",
+        "line": 6,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "data",
+          "kind": "property",
+          "type": "EdgeData",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "id",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "source",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "target",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "GraphNode",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/graph.ts",
+      "sourceLocation": {
+        "filePath": "src/types/graph.ts",
+        "line": 1,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "data",
+          "kind": "property",
+          "type": "NodeData",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "id",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "reverseGraph",
+      "description": "Reverse every directed edge while preserving identities and metadata.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/graph/domain/reverseGraph.ts",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/reverseGraph.ts",
+        "line": 5,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": ["Graph"],
+      "signatures": [
+        {
+          "label": "(graph: Graph<NodeData, EdgeData>) => Graph<NodeData, EdgeData>",
+          "parameters": [
+            {
+              "name": "graph",
+              "type": "Graph<NodeData, EdgeData>",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "Graph<NodeData, EdgeData>",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "topologicalSort",
+      "description": "Return a deterministic topological node order, or null when the graph is cyclic.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/graph/domain/topologicalSort.ts",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/topologicalSort.ts",
+        "line": 4,
+        "column": 1
+      },
+      "exportPaths": ["src/graph.ts"],
+      "relatedSymbols": ["Graph"],
+      "signatures": [
+        {
+          "label": "(graph: Graph<NodeData, EdgeData>) => readonly string[] | null",
+          "parameters": [
+            {
+              "name": "graph",
+              "type": "Graph<NodeData, EdgeData>",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "readonly string[] | null",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    }
+  ],
+  "components": [],
+  "sourceFunctions": [
+    {
+      "name": "createGraph",
+      "description": "Create a deterministic graph and reject ambiguous or dangling identities.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/createGraph.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "assertUniqueIds",
+      "description": "Reject empty or duplicate graph identities.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/createGraph.ts",
+        "line": 32,
+        "column": 1
+      }
+    },
+    {
+      "name": "compareText",
+      "description": "Compare graph identities without locale-dependent ordering.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/createGraph.ts",
+        "line": 43,
+        "column": 1
+      }
+    },
+    {
+      "name": "filterGraph",
+      "description": "Project a graph by node and edge predicates while removing dangling edges.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/filterGraph.ts",
+        "line": 5,
+        "column": 1
+      }
+    },
+    {
+      "name": "findCyclicComponents",
+      "description": "Return strongly connected components that represent graph cycles.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/findCyclicComponents.ts",
+        "line": 5,
+        "column": 1
+      }
+    },
+    {
+      "name": "findStronglyConnectedComponents",
+      "description": "Return strongly connected components in deterministic node order.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "line": 5,
+        "column": 1
+      }
+    },
+    {
+      "name": "buildAdjacency",
+      "description": "Build sorted outgoing adjacency for graph traversal.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "line": 31,
+        "column": 1
+      }
+    },
+    {
+      "name": "visitPostOrder",
+      "description": "Visit one node depth-first and append it after all descendants.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "line": 41,
+        "column": 1
+      }
+    },
+    {
+      "name": "collectComponent",
+      "description": "Collect one strongly connected component from reversed adjacency.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "line": 56,
+        "column": 1
+      }
+    },
+    {
+      "name": "compareText",
+      "description": "Compare graph identities without locale-dependent ordering.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "line": 71,
+        "column": 1
+      }
+    },
+    {
+      "name": "getReachableNodeIds",
+      "description": "Return deterministic reachable node IDs from one graph node.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/getReachableNodeIds.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "buildAdjacency",
+      "description": "Build sorted graph adjacency in the requested direction.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/getReachableNodeIds.ts",
+        "line": 33,
+        "column": 1
+      }
+    },
+    {
+      "name": "compareText",
+      "description": "Compare graph identities without locale-dependent ordering.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/getReachableNodeIds.ts",
+        "line": 50,
+        "column": 1
+      }
+    },
+    {
+      "name": "reverseGraph",
+      "description": "Reverse every directed edge while preserving identities and metadata.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/reverseGraph.ts",
+        "line": 5,
+        "column": 1
+      }
+    },
+    {
+      "name": "topologicalSort",
+      "description": "Return a deterministic topological node order, or null when the graph is cyclic.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/topologicalSort.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "compareText",
+      "description": "Compare graph identities without locale-dependent ordering.",
+      "sourceLocation": {
+        "filePath": "src/features/graph/domain/topologicalSort.ts",
+        "line": 42,
+        "column": 1
+      }
+    }
+  ],
+  "sequenceScenarios": [
+    {
+      "kind": "export",
+      "name": "createGraph",
+      "sourcePath": "src/features/graph/domain/createGraph.ts",
+      "symbolName": "createGraph",
+      "description": "Create a deterministic graph and reject ambiguous or dangling identities.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "filterGraph",
+      "sourcePath": "src/features/graph/domain/filterGraph.ts",
+      "symbolName": "filterGraph",
+      "description": "Project a graph by node and edge predicates while removing dangling edges.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "findCyclicComponents",
+      "sourcePath": "src/features/graph/domain/findCyclicComponents.ts",
+      "symbolName": "findCyclicComponents",
+      "description": "Return strongly connected components that represent graph cycles.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "findStronglyConnectedComponents",
+      "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+      "symbolName": "findStronglyConnectedComponents",
+      "description": "Return strongly connected components in deterministic node order.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "getReachableNodeIds",
+      "sourcePath": "src/features/graph/domain/getReachableNodeIds.ts",
+      "symbolName": "getReachableNodeIds",
+      "description": "Return deterministic reachable node IDs from one graph node.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "reverseGraph",
+      "sourcePath": "src/features/graph/domain/reverseGraph.ts",
+      "symbolName": "reverseGraph",
+      "description": "Reverse every directed edge while preserving identities and metadata.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "topologicalSort",
+      "sourcePath": "src/features/graph/domain/topologicalSort.ts",
+      "symbolName": "topologicalSort",
+      "description": "Return a deterministic topological node order, or null when the graph is cyclic.",
+      "isReadme": false
+    }
+  ],
+  "graphs": {
+    "imports": [
+      {
+        "fromPath": "src/graph.ts",
+        "toPath": "src/features/graph/domain/createGraph.ts",
+        "sourcePath": "src/graph.ts"
+      },
+      {
+        "fromPath": "src/graph.ts",
+        "toPath": "src/features/graph/domain/filterGraph.ts",
+        "sourcePath": "src/graph.ts"
+      },
+      {
+        "fromPath": "src/graph.ts",
+        "toPath": "src/features/graph/domain/findCyclicComponents.ts",
+        "sourcePath": "src/graph.ts"
+      },
+      {
+        "fromPath": "src/graph.ts",
+        "toPath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "sourcePath": "src/graph.ts"
+      },
+      {
+        "fromPath": "src/graph.ts",
+        "toPath": "src/features/graph/domain/getReachableNodeIds.ts",
+        "sourcePath": "src/graph.ts"
+      },
+      {
+        "fromPath": "src/graph.ts",
+        "toPath": "src/features/graph/domain/reverseGraph.ts",
+        "sourcePath": "src/graph.ts"
+      },
+      {
+        "fromPath": "src/graph.ts",
+        "toPath": "src/features/graph/domain/topologicalSort.ts",
+        "sourcePath": "src/graph.ts"
+      },
+      {
+        "fromPath": "src/graph.ts",
+        "toPath": "src/types/graph.ts",
+        "sourcePath": "src/graph.ts"
+      },
+      {
+        "fromPath": "examples/basic-usage/graph.ts",
+        "toPath": "dist/graph.d.ts",
+        "sourcePath": "examples/basic-usage/graph.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/analysis.test.ts",
+        "toPath": "src/features/graph/domain/createGraph.ts",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/analysis.test.ts",
+        "toPath": "src/features/graph/domain/findCyclicComponents.ts",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/analysis.test.ts",
+        "toPath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/analysis.test.ts",
+        "toPath": "src/features/graph/domain/topologicalSort.ts",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/createGraph.test.ts",
+        "toPath": "src/features/graph/domain/createGraph.ts",
+        "sourcePath": "src/features/graph/domain/createGraph.test.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/createGraph.ts",
+        "toPath": "src/types/graph.ts",
+        "sourcePath": "src/features/graph/domain/createGraph.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/filterGraph.ts",
+        "toPath": "src/types/graph.ts",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/filterGraph.ts",
+        "toPath": "src/features/graph/domain/createGraph.ts",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/findCyclicComponents.ts",
+        "toPath": "src/types/graph.ts",
+        "sourcePath": "src/features/graph/domain/findCyclicComponents.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/findCyclicComponents.ts",
+        "toPath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "sourcePath": "src/features/graph/domain/findCyclicComponents.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "toPath": "src/types/graph.ts",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "toPath": "src/features/graph/domain/reverseGraph.ts",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/getReachableNodeIds.ts",
+        "toPath": "src/types/graph.ts",
+        "sourcePath": "src/features/graph/domain/getReachableNodeIds.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/reverseGraph.ts",
+        "toPath": "src/types/graph.ts",
+        "sourcePath": "src/features/graph/domain/reverseGraph.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/reverseGraph.ts",
+        "toPath": "src/features/graph/domain/createGraph.ts",
+        "sourcePath": "src/features/graph/domain/reverseGraph.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/topologicalSort.ts",
+        "toPath": "src/types/graph.ts",
+        "sourcePath": "src/features/graph/domain/topologicalSort.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/traversal.test.ts",
+        "toPath": "src/features/graph/domain/createGraph.ts",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/traversal.test.ts",
+        "toPath": "src/features/graph/domain/filterGraph.ts",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/traversal.test.ts",
+        "toPath": "src/features/graph/domain/getReachableNodeIds.ts",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromPath": "src/features/graph/domain/traversal.test.ts",
+        "toPath": "src/features/graph/domain/reverseGraph.ts",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      }
+    ],
+    "calls": [
+      {
+        "fromSymbol": "examples/basic-usage/graph.ts",
+        "toSymbol": "createGraph",
+        "callExpression": "createGraph",
+        "sourcePath": "examples/basic-usage/graph.ts"
+      },
+      {
+        "fromSymbol": "examples/basic-usage/graph.ts",
+        "toSymbol": "getReachableNodeIds",
+        "callExpression": "getReachableNodeIds",
+        "sourcePath": "examples/basic-usage/graph.ts"
+      },
+      {
+        "fromSymbol": "examples/basic-usage/graph.ts",
+        "toSymbol": "topologicalSort",
+        "callExpression": "topologicalSort",
+        "sourcePath": "examples/basic-usage/graph.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/analysis.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/analysis.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/analysis.test.ts",
+        "toSymbol": "createGraph",
+        "callExpression": "createGraph",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/analysis.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/analysis.test.ts",
+        "toSymbol": "findStronglyConnectedComponents",
+        "callExpression": "findStronglyConnectedComponents",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/analysis.test.ts",
+        "toSymbol": "findCyclicComponents",
+        "callExpression": "findCyclicComponents",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/analysis.test.ts",
+        "toSymbol": "topologicalSort",
+        "callExpression": "topologicalSort",
+        "sourcePath": "src/features/graph/domain/analysis.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/createGraph.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/graph/domain/createGraph.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/createGraph.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/graph/domain/createGraph.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/createGraph.test.ts",
+        "toSymbol": "createGraph",
+        "callExpression": "createGraph",
+        "sourcePath": "src/features/graph/domain/createGraph.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/createGraph.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/graph/domain/createGraph.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/createGraph.ts",
+        "toSymbol": "compareText",
+        "callExpression": "compareText",
+        "sourcePath": "src/features/graph/domain/createGraph.ts"
+      },
+      {
+        "fromSymbol": "createGraph",
+        "toSymbol": "assertUniqueIds",
+        "callExpression": "assertUniqueIds",
+        "sourcePath": "src/features/graph/domain/createGraph.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/filterGraph.ts",
+        "toSymbol": "edge",
+        "callExpression": "options.edge",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromSymbol": "filterGraph",
+        "toSymbol": "createGraph",
+        "callExpression": "createGraph",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromSymbol": "findCyclicComponents",
+        "toSymbol": "findStronglyConnectedComponents",
+        "callExpression": "findStronglyConnectedComponents",
+        "sourcePath": "src/features/graph/domain/findCyclicComponents.ts"
+      },
+      {
+        "fromSymbol": "findStronglyConnectedComponents",
+        "toSymbol": "buildAdjacency",
+        "callExpression": "buildAdjacency",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "findStronglyConnectedComponents",
+        "toSymbol": "visitPostOrder",
+        "callExpression": "visitPostOrder",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "findStronglyConnectedComponents",
+        "toSymbol": "reverseGraph",
+        "callExpression": "reverseGraph",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "findStronglyConnectedComponents",
+        "toSymbol": "collectComponent",
+        "callExpression": "collectComponent",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/findStronglyConnectedComponents.ts",
+        "toSymbol": "compareText",
+        "callExpression": "compareText",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "visitPostOrder",
+        "toSymbol": "visitPostOrder",
+        "callExpression": "visitPostOrder",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "collectComponent",
+        "toSymbol": "collectComponent",
+        "callExpression": "collectComponent",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "getReachableNodeIds",
+        "toSymbol": "buildAdjacency",
+        "callExpression": "buildAdjacency",
+        "sourcePath": "src/features/graph/domain/getReachableNodeIds.ts"
+      },
+      {
+        "fromSymbol": "reverseGraph",
+        "toSymbol": "createGraph",
+        "callExpression": "createGraph",
+        "sourcePath": "src/features/graph/domain/reverseGraph.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/traversal.test.ts",
+        "toSymbol": "createGraph",
+        "callExpression": "createGraph",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/traversal.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/traversal.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/traversal.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/traversal.test.ts",
+        "toSymbol": "getReachableNodeIds",
+        "callExpression": "getReachableNodeIds",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/traversal.test.ts",
+        "toSymbol": "reverseGraph",
+        "callExpression": "reverseGraph",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/graph/domain/traversal.test.ts",
+        "toSymbol": "filterGraph",
+        "callExpression": "filterGraph",
+        "sourcePath": "src/features/graph/domain/traversal.test.ts"
+      }
+    ],
+    "typeReferences": [
+      {
+        "fromSymbol": "createGraph",
+        "toType": "EdgeData",
+        "sourcePath": "src/features/graph/domain/createGraph.ts"
+      },
+      {
+        "fromSymbol": "createGraph",
+        "toType": "Graph",
+        "sourcePath": "src/features/graph/domain/createGraph.ts"
+      },
+      {
+        "fromSymbol": "createGraph",
+        "toType": "NodeData",
+        "sourcePath": "src/features/graph/domain/createGraph.ts"
+      },
+      {
+        "fromSymbol": "filterGraph",
+        "toType": "EdgeData",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromSymbol": "filterGraph",
+        "toType": "Graph",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromSymbol": "filterGraph",
+        "toType": "GraphEdge",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromSymbol": "filterGraph",
+        "toType": "GraphNode",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromSymbol": "filterGraph",
+        "toType": "NodeData",
+        "sourcePath": "src/features/graph/domain/filterGraph.ts"
+      },
+      {
+        "fromSymbol": "findCyclicComponents",
+        "toType": "EdgeData",
+        "sourcePath": "src/features/graph/domain/findCyclicComponents.ts"
+      },
+      {
+        "fromSymbol": "findCyclicComponents",
+        "toType": "Graph",
+        "sourcePath": "src/features/graph/domain/findCyclicComponents.ts"
+      },
+      {
+        "fromSymbol": "findCyclicComponents",
+        "toType": "NodeData",
+        "sourcePath": "src/features/graph/domain/findCyclicComponents.ts"
+      },
+      {
+        "fromSymbol": "findStronglyConnectedComponents",
+        "toType": "EdgeData",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "findStronglyConnectedComponents",
+        "toType": "Graph",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "findStronglyConnectedComponents",
+        "toType": "NodeData",
+        "sourcePath": "src/features/graph/domain/findStronglyConnectedComponents.ts"
+      },
+      {
+        "fromSymbol": "getReachableNodeIds",
+        "toType": "EdgeData",
+        "sourcePath": "src/features/graph/domain/getReachableNodeIds.ts"
+      },
+      {
+        "fromSymbol": "getReachableNodeIds",
+        "toType": "Graph",
+        "sourcePath": "src/features/graph/domain/getReachableNodeIds.ts"
+      },
+      {
+        "fromSymbol": "getReachableNodeIds",
+        "toType": "NodeData",
+        "sourcePath": "src/features/graph/domain/getReachableNodeIds.ts"
+      },
+      {
+        "fromSymbol": "reverseGraph",
+        "toType": "EdgeData",
+        "sourcePath": "src/features/graph/domain/reverseGraph.ts"
+      },
+      {
+        "fromSymbol": "reverseGraph",
+        "toType": "Graph",
+        "sourcePath": "src/features/graph/domain/reverseGraph.ts"
+      },
+      {
+        "fromSymbol": "reverseGraph",
+        "toType": "NodeData",
+        "sourcePath": "src/features/graph/domain/reverseGraph.ts"
+      },
+      {
+        "fromSymbol": "topologicalSort",
+        "toType": "EdgeData",
+        "sourcePath": "src/features/graph/domain/topologicalSort.ts"
+      },
+      {
+        "fromSymbol": "topologicalSort",
+        "toType": "Graph",
+        "sourcePath": "src/features/graph/domain/topologicalSort.ts"
+      },
+      {
+        "fromSymbol": "topologicalSort",
+        "toType": "NodeData",
+        "sourcePath": "src/features/graph/domain/topologicalSort.ts"
+      },
+      {
+        "fromSymbol": "Graph",
+        "toType": "EdgeData",
+        "sourcePath": "src/types/graph.ts"
+      },
+      {
+        "fromSymbol": "Graph",
+        "toType": "GraphEdge",
+        "sourcePath": "src/types/graph.ts"
+      },
+      {
+        "fromSymbol": "Graph",
+        "toType": "GraphNode",
+        "sourcePath": "src/types/graph.ts"
+      },
+      {
+        "fromSymbol": "Graph",
+        "toType": "NodeData",
+        "sourcePath": "src/types/graph.ts"
+      },
+      {
+        "fromSymbol": "GraphEdge",
+        "toType": "EdgeData",
+        "sourcePath": "src/types/graph.ts"
+      },
+      {
+        "fromSymbol": "GraphNode",
+        "toType": "NodeData",
+        "sourcePath": "src/types/graph.ts"
+      }
+    ],
+    "componentComposition": []
+  }
+}

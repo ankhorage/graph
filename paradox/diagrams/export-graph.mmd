@@ -1,0 +1,45 @@
+graph LR
+  module_examples_basic_usage_graph_ts["examples/basic-usage/graph.ts"]
+  module_src_features_graph_domain_analysis_test_ts["src/features/graph/domain/analysis.test.ts"]
+  module_src_features_graph_domain_createGraph_test_ts["src/features/graph/domain/createGraph.test.ts"]
+  module_src_features_graph_domain_createGraph_ts["src/features/graph/domain/createGraph.ts"]
+  module_src_features_graph_domain_filterGraph_ts["src/features/graph/domain/filterGraph.ts"]
+  module_src_features_graph_domain_findCyclicComponents_ts["src/features/graph/domain/findCyclicComponents.ts"]
+  module_src_features_graph_domain_findStronglyConnectedComponents_ts["src/features/graph/domain/findStronglyConnectedComponents.ts"]
+  module_src_features_graph_domain_getReachableNodeIds_ts["src/features/graph/domain/getReachableNodeIds.ts"]
+  module_src_features_graph_domain_reverseGraph_ts["src/features/graph/domain/reverseGraph.ts"]
+  module_src_features_graph_domain_topologicalSort_ts["src/features/graph/domain/topologicalSort.ts"]
+  module_src_features_graph_domain_traversal_test_ts["src/features/graph/domain/traversal.test.ts"]
+  module_src_graph_ts["src/graph.ts"]
+  module_src_types_graph_ts["src/types/graph.ts"]
+  export_createGraph["createGraph"]
+  module_src_features_graph_domain_createGraph_ts --> export_createGraph
+  export_createGraph -.-> export_Graph
+  export_filterGraph["filterGraph"]
+  module_src_features_graph_domain_filterGraph_ts --> export_filterGraph
+  export_filterGraph -.-> export_Graph
+  export_filterGraph -.-> export_GraphEdge
+  export_filterGraph -.-> export_GraphNode
+  export_findCyclicComponents["findCyclicComponents"]
+  module_src_features_graph_domain_findCyclicComponents_ts --> export_findCyclicComponents
+  export_findCyclicComponents -.-> export_Graph
+  export_findStronglyConnectedComponents["findStronglyConnectedComponents"]
+  module_src_features_graph_domain_findStronglyConnectedComponents_ts --> export_findStronglyConnectedComponents
+  export_findStronglyConnectedComponents -.-> export_Graph
+  export_getReachableNodeIds["getReachableNodeIds"]
+  module_src_features_graph_domain_getReachableNodeIds_ts --> export_getReachableNodeIds
+  export_getReachableNodeIds -.-> export_Graph
+  export_Graph["Graph"]
+  module_src_types_graph_ts --> export_Graph
+  export_Graph -.-> export_GraphEdge
+  export_Graph -.-> export_GraphNode
+  export_GraphEdge["GraphEdge"]
+  module_src_types_graph_ts --> export_GraphEdge
+  export_GraphNode["GraphNode"]
+  module_src_types_graph_ts --> export_GraphNode
+  export_reverseGraph["reverseGraph"]
+  module_src_features_graph_domain_reverseGraph_ts --> export_reverseGraph
+  export_reverseGraph -.-> export_Graph
+  export_topologicalSort["topologicalSort"]
+  module_src_features_graph_domain_topologicalSort_ts --> export_topologicalSort
+  export_topologicalSort -.-> export_Graph
