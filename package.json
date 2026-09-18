@@ -12,21 +12,9 @@
   "bugs": {
     "url": "https://github.com/ankhorage/graph/issues"
   },
-  "keywords": [
-    "ankhorage",
-    "directed-graph",
-    "graph",
-    "graph-theory",
-    "typescript"
-  ],
+  "keywords": ["ankhorage", "directed-graph", "graph", "graph-theory", "typescript"],
   "sideEffects": false,
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE",
-    "CHANGELOG.md",
-    "examples"
-  ],
+  "files": ["dist", "README.md", "LICENSE", "CHANGELOG.md", "examples"],
   "exports": {
     ".": {
       "types": "./dist/graph.d.ts",
