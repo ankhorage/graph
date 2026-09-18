@@ -1,5 +1,11 @@
 # @ankhorage/graph
 
+## 0.1.2
+
+### Patch Changes
+
+- 904ad91: Document the basic usage example for generated Paradox README documentation.
+
 ## 0.1.1
 
 ### Patch Changes
