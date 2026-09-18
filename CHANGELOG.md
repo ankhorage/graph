@@ -1,5 +1,11 @@
 # @ankhorage/graph
 
+## 0.2.0
+
+### Minor Changes
+
+- db8f1f8: Expose deterministic simple cycle-path extraction, including component-restricted traversal and self-loop paths.
+
 ## 0.1.2
 
 ### Patch Changes
