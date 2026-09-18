@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'bun:test';
 
 import { createGraph } from './createGraph.js';
+import { findCyclePath } from './findCyclePath.js';
 import { findCyclicComponents } from './findCyclicComponents.js';
 import { findStronglyConnectedComponents } from './findStronglyConnectedComponents.js';
 import { topologicalSort } from './topologicalSort.js';
@@ -18,6 +19,9 @@ describe('graph analysis', () => {
 
     expect(findStronglyConnectedComponents(graph)).toEqual([['a', 'b'], ['c'], ['d']]);
     expect(findCyclicComponents(graph)).toEqual([['a', 'b'], ['c']]);
+    expect(findCyclePath(graph)).toEqual(['a', 'b', 'a']);
+    expect(findCyclePath(graph, ['c'])).toEqual(['c', 'c']);
+    expect(findCyclePath(graph, ['d'])).toBeNull();
     expect(topologicalSort(graph)).toBeNull();
   });
 
