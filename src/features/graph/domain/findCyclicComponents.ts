@@ -10,6 +10,7 @@ export function findCyclicComponents<NodeData, EdgeData>(
   );
 
   return findStronglyConnectedComponents(graph).filter(
-    (component) => component.length > 1 || (component[0] !== undefined && selfLoops.has(component[0])),
+    (component) =>
+      component.length > 1 || (component[0] !== undefined && selfLoops.has(component[0])),
   );
 }
