@@ -7,8 +7,14 @@ export function createGraph<NodeData, EdgeData>(
   const nodes = [...input.nodes].sort((left, right) => compareText(left.id, right.id));
   const edges = [...input.edges].sort((left, right) => compareText(left.id, right.id));
 
-  assertUniqueIds(nodes.map(({ id }) => id), 'node');
-  assertUniqueIds(edges.map(({ id }) => id), 'edge');
+  assertUniqueIds(
+    nodes.map(({ id }) => id),
+    'node',
+  );
+  assertUniqueIds(
+    edges.map(({ id }) => id),
+    'edge',
+  );
 
   const nodeIds = new Set(nodes.map(({ id }) => id));
   for (const edge of edges) {
