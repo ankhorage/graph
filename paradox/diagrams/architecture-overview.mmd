@@ -8,36 +8,51 @@ graph TD
   module_src_features_graph_domain_analysis_test_ts["src/features/graph/domain/analysis.test.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_analysis_test_ts
   module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_findCyclePath_ts
   module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_findCyclicComponents_ts
   module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_findStronglyConnectedComponents_ts
   module_src_features_graph_domain_analysis_test_ts --> module_src_features_graph_domain_topologicalSort_ts
+  module_src_features_graph_domain_compareGraphIds_ts["src/features/graph/domain/compareGraphIds.ts"]
+  package__ankhorage_graph -.-> module_src_features_graph_domain_compareGraphIds_ts
+  module_src_features_graph_domain_compareGraphIds_ts --> module_src_types_graph_ts
   module_src_features_graph_domain_createGraph_test_ts["src/features/graph/domain/createGraph.test.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_createGraph_test_ts
   module_src_features_graph_domain_createGraph_test_ts --> module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_createGraph_ts["src/features/graph/domain/createGraph.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_createGraph_ts --> module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_createGraph_ts --> module_src_types_graph_ts
   module_src_features_graph_domain_filterGraph_ts["src/features/graph/domain/filterGraph.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_filterGraph_ts
   module_src_features_graph_domain_filterGraph_ts --> module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_filterGraph_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_findCyclePath_ts["src/features/graph/domain/findCyclePath.ts"]
+  package__ankhorage_graph -.-> module_src_features_graph_domain_findCyclePath_ts
+  module_src_features_graph_domain_findCyclePath_ts --> module_src_features_graph_domain_compareGraphIds_ts
+  module_src_features_graph_domain_findCyclePath_ts --> module_src_types_graph_ts
   module_src_features_graph_domain_findCyclicComponents_ts["src/features/graph/domain/findCyclicComponents.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_findCyclicComponents_ts
   module_src_features_graph_domain_findCyclicComponents_ts --> module_src_features_graph_domain_findStronglyConnectedComponents_ts
   module_src_features_graph_domain_findCyclicComponents_ts --> module_src_types_graph_ts
   module_src_features_graph_domain_findStronglyConnectedComponents_ts["src/features/graph/domain/findStronglyConnectedComponents.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_findStronglyConnectedComponents_ts
+  module_src_features_graph_domain_findStronglyConnectedComponents_ts --> module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_findStronglyConnectedComponents_ts --> module_src_features_graph_domain_reverseGraph_ts
   module_src_features_graph_domain_findStronglyConnectedComponents_ts --> module_src_types_graph_ts
   module_src_features_graph_domain_getReachableNodeIds_ts["src/features/graph/domain/getReachableNodeIds.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_getReachableNodeIds_ts
+  module_src_features_graph_domain_getReachableNodeIds_ts --> module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_getReachableNodeIds_ts --> module_src_types_graph_ts
+  module_src_features_graph_domain_numericGraph_test_ts["src/features/graph/domain/numericGraph.test.ts"]
+  package__ankhorage_graph -.-> module_src_features_graph_domain_numericGraph_test_ts
+  module_src_features_graph_domain_numericGraph_test_ts --> module_src_graph_ts
   module_src_features_graph_domain_reverseGraph_ts["src/features/graph/domain/reverseGraph.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_reverseGraph_ts
   module_src_features_graph_domain_reverseGraph_ts --> module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_reverseGraph_ts --> module_src_types_graph_ts
   module_src_features_graph_domain_topologicalSort_ts["src/features/graph/domain/topologicalSort.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_topologicalSort_ts
+  module_src_features_graph_domain_topologicalSort_ts --> module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_topologicalSort_ts --> module_src_types_graph_ts
   module_src_features_graph_domain_traversal_test_ts["src/features/graph/domain/traversal.test.ts"]
   package__ankhorage_graph -.-> module_src_features_graph_domain_traversal_test_ts

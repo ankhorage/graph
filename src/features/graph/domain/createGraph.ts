@@ -1,11 +1,15 @@
-import type { Graph } from '../../../types/graph.js';
+import type { Graph, GraphId } from '../../../types/graph.js';
+import { compareGraphIds } from './compareGraphIds.js';
 
 /*** Create a deterministic graph and reject ambiguous or dangling identities. */
-export function createGraph<NodeData, EdgeData>(
-  input: Graph<NodeData, EdgeData>,
-): Graph<NodeData, EdgeData> {
-  const nodes = [...input.nodes].sort((left, right) => compareText(left.id, right.id));
-  const edges = [...input.edges].sort((left, right) => compareText(left.id, right.id));
+export function createGraph<
+  NodeData,
+  EdgeData,
+  NodeId extends GraphId = string,
+  EdgeId extends GraphId = NodeId,
+>(input: Graph<NodeData, EdgeData, NodeId, EdgeId>): Graph<NodeData, EdgeData, NodeId, EdgeId> {
+  const nodes = [...input.nodes].sort((left, right) => compareGraphIds(left.id, right.id));
+  const edges = [...input.edges].sort((left, right) => compareGraphIds(left.id, right.id));
 
   assertUniqueIds(
     nodes.map(({ id }) => id),
@@ -29,18 +33,17 @@ export function createGraph<NodeData, EdgeData>(
 }
 
 /*** Reject empty or duplicate graph identities. */
-function assertUniqueIds(ids: readonly string[], kind: 'edge' | 'node'): void {
-  const seen = new Set<string>();
+function assertUniqueIds<Id extends GraphId>(ids: readonly Id[], kind: 'edge' | 'node'): void {
+  const seen = new Set<Id>();
 
   for (const id of ids) {
-    if (id.trim() === '') throw new Error(`Graph ${kind} IDs must be non-empty.`);
+    if (typeof id === 'string' && id.trim() === '') {
+      throw new Error(`Graph ${kind} IDs must be non-empty.`);
+    }
+    if (typeof id === 'number' && !Number.isSafeInteger(id)) {
+      throw new Error(`Graph ${kind} numeric IDs must be safe integers.`);
+    }
     if (seen.has(id)) throw new Error(`Duplicate graph ${kind} ID: ${id}.`);
     seen.add(id);
   }
-}
-
-/*** Compare graph identities without locale-dependent ordering. */
-function compareText(left: string, right: string): number {
-  if (left < right) return -1;
-  return left > right ? 1 : 0;
 }

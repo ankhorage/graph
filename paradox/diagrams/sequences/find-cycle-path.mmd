@@ -1,0 +1,13 @@
+sequenceDiagram
+  participant participant_buildAdjacency as buildAdjacency
+  participant participant_findCycleFromStart as findCycleFromStart
+  participant participant_findCyclePath as findCyclePath
+  participant participant_visitCycle as visitCycle
+  participant_findCyclePath->>participant_buildAdjacency: buildAdjacency()
+  participant_buildAdjacency-->>participant_findCyclePath: return
+  participant_findCyclePath->>participant_findCycleFromStart: findCycleFromStart()
+  participant_findCycleFromStart->>participant_visitCycle: visitCycle()
+  participant_visitCycle->>participant_visitCycle: visitCycle()
+  participant_visitCycle-->>participant_visitCycle: return
+  participant_visitCycle-->>participant_findCycleFromStart: return
+  participant_findCycleFromStart-->>participant_findCyclePath: return
