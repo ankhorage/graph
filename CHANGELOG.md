@@ -1,5 +1,11 @@
 # @ankhorage/graph
 
+## 0.3.0
+
+### Minor Changes
+
+- 5032677: Allow safe integer node and edge IDs across the generic graph model and deterministic algorithms while retaining string IDs as the default consumer contract.
+
 ## 0.2.0
 
 ### Minor Changes
