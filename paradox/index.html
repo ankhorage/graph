@@ -199,10 +199,20 @@
               <button
                 class="nav-button"
                 type="button"
+                data-target="src/features/graph/domain/compareGraphIds.ts"
+              >
+                src/features/graph/domain/compareGraphIds.ts
+                <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
                 data-target="src/features/graph/domain/createGraph.ts"
               >
                 src/features/graph/domain/createGraph.ts
-                <small>3 functions</small>
+                <small>2 functions</small>
               </button>
             </li>
             <li>
@@ -213,6 +223,16 @@
               >
                 src/features/graph/domain/filterGraph.ts
                 <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/graph/domain/findCyclePath.ts"
+              >
+                src/features/graph/domain/findCyclePath.ts
+                <small>4 functions</small>
               </button>
             </li>
             <li>
@@ -232,7 +252,7 @@
                 data-target="src/features/graph/domain/findStronglyConnectedComponents.ts"
               >
                 src/features/graph/domain/findStronglyConnectedComponents.ts
-                <small>5 functions</small>
+                <small>4 functions</small>
               </button>
             </li>
             <li>
@@ -242,7 +262,7 @@
                 data-target="src/features/graph/domain/getReachableNodeIds.ts"
               >
                 src/features/graph/domain/getReachableNodeIds.ts
-                <small>3 functions</small>
+                <small>2 functions</small>
               </button>
             </li>
             <li>
@@ -262,7 +282,7 @@
                 data-target="src/features/graph/domain/topologicalSort.ts"
               >
                 src/features/graph/domain/topologicalSort.ts
-                <small>2 functions</small>
+                <small>1 function</small>
               </button>
             </li>
           </ul>
@@ -273,9 +293,9 @@
           <section class="panel">
             <h2>Package overview</h2>
             <div class="summary">
-              <div><strong>10</strong><span class="muted">public exports</span></div>
+              <div><strong>12</strong><span class="muted">public exports</span></div>
               <div><strong>0</strong><span class="muted">components</span></div>
-              <div><strong>13</strong><span class="muted">modules</span></div>
+              <div><strong>16</strong><span class="muted">modules</span></div>
               <div><strong>1</strong><span class="muted">entrypoints</span></div>
             </div>
             <h3>Entrypoints</h3>
@@ -294,18 +314,28 @@
             </article>
             <article
               class="item"
-              data-search="src/features/graph/domain/analysis.test.ts src/features/graph/domain/createGraph.ts src/features/graph/domain/findCyclicComponents.ts src/features/graph/domain/findStronglyConnectedComponents.ts src/features/graph/domain/topologicalSort.ts"
+              data-search="src/features/graph/domain/analysis.test.ts src/features/graph/domain/createGraph.ts src/features/graph/domain/findCyclePath.ts src/features/graph/domain/findCyclicComponents.ts src/features/graph/domain/findStronglyConnectedComponents.ts src/features/graph/domain/topologicalSort.ts"
             >
               <h3>src/features/graph/domain/analysis.test.ts</h3>
               <p class="muted">Referenced module</p>
               <p>
                 <strong>Dependencies:</strong>
                 <code>src/features/graph/domain/createGraph.ts</code>,
+                <code>src/features/graph/domain/findCyclePath.ts</code>,
                 <code>src/features/graph/domain/findCyclicComponents.ts</code>,
                 <code>src/features/graph/domain/findStronglyConnectedComponents.ts</code>,
                 <code>src/features/graph/domain/topologicalSort.ts</code>
               </p>
               <p><strong>Exports:</strong> <span class="empty">None</span></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/graph/domain/compareGraphIds.ts src/types/graph.ts compareGraphIds"
+            >
+              <h3>src/features/graph/domain/compareGraphIds.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <code>src/types/graph.ts</code></p>
+              <p><strong>Exports:</strong> <code>compareGraphIds</code></p>
             </article>
             <article
               class="item"
@@ -320,11 +350,15 @@
             </article>
             <article
               class="item"
-              data-search="src/features/graph/domain/createGraph.ts src/types/graph.ts createGraph"
+              data-search="src/features/graph/domain/createGraph.ts src/features/graph/domain/compareGraphIds.ts src/types/graph.ts createGraph"
             >
               <h3>src/features/graph/domain/createGraph.ts</h3>
               <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <code>src/types/graph.ts</code></p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/graph/domain/compareGraphIds.ts</code>,
+                <code>src/types/graph.ts</code>
+              </p>
               <p><strong>Exports:</strong> <code>createGraph</code></p>
             </article>
             <article
@@ -342,6 +376,19 @@
             </article>
             <article
               class="item"
+              data-search="src/features/graph/domain/findCyclePath.ts src/features/graph/domain/compareGraphIds.ts src/types/graph.ts findCyclePath"
+            >
+              <h3>src/features/graph/domain/findCyclePath.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/graph/domain/compareGraphIds.ts</code>,
+                <code>src/types/graph.ts</code>
+              </p>
+              <p><strong>Exports:</strong> <code>findCyclePath</code></p>
+            </article>
+            <article
+              class="item"
               data-search="src/features/graph/domain/findCyclicComponents.ts src/features/graph/domain/findStronglyConnectedComponents.ts src/types/graph.ts findCyclicComponents"
             >
               <h3>src/features/graph/domain/findCyclicComponents.ts</h3>
@@ -355,12 +402,13 @@
             </article>
             <article
               class="item"
-              data-search="src/features/graph/domain/findStronglyConnectedComponents.ts src/features/graph/domain/reverseGraph.ts src/types/graph.ts findStronglyConnectedComponents"
+              data-search="src/features/graph/domain/findStronglyConnectedComponents.ts src/features/graph/domain/compareGraphIds.ts src/features/graph/domain/reverseGraph.ts src/types/graph.ts findStronglyConnectedComponents"
             >
               <h3>src/features/graph/domain/findStronglyConnectedComponents.ts</h3>
               <p class="muted">Referenced module</p>
               <p>
                 <strong>Dependencies:</strong>
+                <code>src/features/graph/domain/compareGraphIds.ts</code>,
                 <code>src/features/graph/domain/reverseGraph.ts</code>,
                 <code>src/types/graph.ts</code>
               </p>
@@ -368,12 +416,25 @@
             </article>
             <article
               class="item"
-              data-search="src/features/graph/domain/getReachableNodeIds.ts src/types/graph.ts getReachableNodeIds"
+              data-search="src/features/graph/domain/getReachableNodeIds.ts src/features/graph/domain/compareGraphIds.ts src/types/graph.ts getReachableNodeIds"
             >
               <h3>src/features/graph/domain/getReachableNodeIds.ts</h3>
               <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <code>src/types/graph.ts</code></p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/graph/domain/compareGraphIds.ts</code>,
+                <code>src/types/graph.ts</code>
+              </p>
               <p><strong>Exports:</strong> <code>getReachableNodeIds</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/graph/domain/numericGraph.test.ts src/graph.ts"
+            >
+              <h3>src/features/graph/domain/numericGraph.test.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <code>src/graph.ts</code></p>
+              <p><strong>Exports:</strong> <span class="empty">None</span></p>
             </article>
             <article
               class="item"
@@ -390,11 +451,15 @@
             </article>
             <article
               class="item"
-              data-search="src/features/graph/domain/topologicalSort.ts src/types/graph.ts topologicalSort"
+              data-search="src/features/graph/domain/topologicalSort.ts src/features/graph/domain/compareGraphIds.ts src/types/graph.ts topologicalSort"
             >
               <h3>src/features/graph/domain/topologicalSort.ts</h3>
               <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <code>src/types/graph.ts</code></p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/graph/domain/compareGraphIds.ts</code>,
+                <code>src/types/graph.ts</code>
+              </p>
               <p><strong>Exports:</strong> <code>topologicalSort</code></p>
             </article>
             <article
@@ -414,25 +479,29 @@
             </article>
             <article
               class="item"
-              data-search="src/graph.ts createGraph filterGraph findCyclicComponents findStronglyConnectedComponents getReachableNodeIds Graph GraphEdge GraphNode reverseGraph topologicalSort"
+              data-search="src/graph.ts createGraph filterGraph findCyclePath findCyclicComponents findStronglyConnectedComponents getReachableNodeIds Graph GraphEdge GraphId GraphNode reverseGraph topologicalSort"
             >
               <h3>src/graph.ts</h3>
               <p class="muted">Configured entrypoint</p>
               <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
               <p>
                 <strong>Exports:</strong> <code>createGraph</code>, <code>filterGraph</code>,
-                <code>findCyclicComponents</code>, <code>findStronglyConnectedComponents</code>,
-                <code>getReachableNodeIds</code>, <code>Graph</code>, <code>GraphEdge</code>,
+                <code>findCyclePath</code>, <code>findCyclicComponents</code>,
+                <code>findStronglyConnectedComponents</code>, <code>getReachableNodeIds</code>,
+                <code>Graph</code>, <code>GraphEdge</code>, <code>GraphId</code>,
                 <code>GraphNode</code>, <code>reverseGraph</code>, <code>topologicalSort</code>
               </p>
             </article>
-            <article class="item" data-search="src/types/graph.ts Graph GraphEdge GraphNode">
+            <article
+              class="item"
+              data-search="src/types/graph.ts Graph GraphEdge GraphId GraphNode"
+            >
               <h3>src/types/graph.ts</h3>
               <p class="muted">Referenced module</p>
               <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
               <p>
                 <strong>Exports:</strong> <code>Graph</code>, <code>GraphEdge</code>,
-                <code>GraphNode</code>
+                <code>GraphId</code>, <code>GraphNode</code>
               </p>
             </article>
           </section>
@@ -444,11 +513,11 @@
               <article
                 class="item"
                 id="symbol-creategraph"
-                data-search="createGraph function src/features/graph/domain/createGraph.ts Create a deterministic graph and reject ambiguous or dangling identities. Graph (input: Graph&lt;NodeData, EdgeData&gt;) =&gt; Graph&lt;NodeData, EdgeData&gt;"
+                data-search="createGraph function src/features/graph/domain/createGraph.ts Create a deterministic graph and reject ambiguous or dangling identities. Graph (input: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;"
               >
                 <h4>createGraph</h4>
                 <p class="muted">
-                  function • <code>src/features/graph/domain/createGraph.ts:4:1</code>
+                  function • <code>src/features/graph/domain/createGraph.ts:5:1</code>
                 </p>
                 <p>Create a deterministic graph and reject ambiguous or dangling identities.</p>
                 <p><strong>Export paths:</strong> <code>src/graph.ts</code></p>
@@ -461,7 +530,7 @@
                 <div>
                   <h5>Signature</h5>
                   <pre>
-(input: Graph&lt;NodeData, EdgeData&gt;) =&gt; Graph&lt;NodeData, EdgeData&gt;</pre>
+(input: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</pre>
                   <table>
                     <thead>
                       <tr>
@@ -474,13 +543,16 @@
                     <tbody>
                       <tr>
                         <td><code>input</code></td>
-                        <td><code>Graph&lt;NodeData, EdgeData&gt;</code></td>
+                        <td><code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
                     </tbody>
                   </table>
-                  <p><strong>Returns:</strong> <code>Graph&lt;NodeData, EdgeData&gt;</code></p>
+                  <p>
+                    <strong>Returns:</strong>
+                    <code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code>
+                  </p>
                 </div>
               </article>
             </section>
@@ -489,7 +561,7 @@
               <article
                 class="item"
                 id="symbol-filtergraph"
-                data-search="filterGraph function src/features/graph/domain/filterGraph.ts Project a graph by node and edge predicates while removing dangling edges. Graph GraphEdge GraphNode (graph: Graph&lt;NodeData, EdgeData&gt;, options: { readonly node?: (node: GraphNode&lt;NodeData&gt;) =&gt; boolean; readonly edge?: (edge: GraphEdge&lt;EdgeData&gt;) =&gt; boolean; }) =&gt; Graph&lt;NodeData, EdgeData&gt;"
+                data-search="filterGraph function src/features/graph/domain/filterGraph.ts Project a graph by node and edge predicates while removing dangling edges. Graph GraphEdge GraphNode (graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;, options: { readonly node?: (node: GraphNode&lt;NodeData, NodeId&gt;) =&gt; boolean; readonly edge?: (edge: GraphEdge&lt;EdgeData, NodeId, EdgeId&gt;) =&gt; boolean; }) =&gt; Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;"
               >
                 <h4>filterGraph</h4>
                 <p class="muted">
@@ -508,7 +580,7 @@
                 <div>
                   <h5>Signature</h5>
                   <pre>
-(graph: Graph&lt;NodeData, EdgeData&gt;, options: { readonly node?: (node: GraphNode&lt;NodeData&gt;) =&gt; boolean; readonly edge?: (edge: GraphEdge&lt;EdgeData&gt;) =&gt; boolean; }) =&gt; Graph&lt;NodeData, EdgeData&gt;</pre>
+(graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;, options: { readonly node?: (node: GraphNode&lt;NodeData, NodeId&gt;) =&gt; boolean; readonly edge?: (edge: GraphEdge&lt;EdgeData, NodeId, EdgeId&gt;) =&gt; boolean; }) =&gt; Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</pre>
                   <table>
                     <thead>
                       <tr>
@@ -521,7 +593,7 @@
                     <tbody>
                       <tr>
                         <td><code>graph</code></td>
-                        <td><code>Graph&lt;NodeData, EdgeData&gt;</code></td>
+                        <td><code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
@@ -529,8 +601,9 @@
                         <td><code>options</code></td>
                         <td>
                           <code
-                            >{ readonly node?: (node: GraphNode&lt;NodeData&gt;) =&gt; boolean;
-                            readonly edge?: (edge: GraphEdge&lt;EdgeData&gt;) =&gt; boolean; }</code
+                            >{ readonly node?: (node: GraphNode&lt;NodeData, NodeId&gt;) =&gt;
+                            boolean; readonly edge?: (edge: GraphEdge&lt;EdgeData, NodeId,
+                            EdgeId&gt;) =&gt; boolean; }</code
                           >
                         </td>
                         <td>yes</td>
@@ -538,7 +611,63 @@
                       </tr>
                     </tbody>
                   </table>
-                  <p><strong>Returns:</strong> <code>Graph&lt;NodeData, EdgeData&gt;</code></p>
+                  <p>
+                    <strong>Returns:</strong>
+                    <code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code>
+                  </p>
+                </div>
+              </article>
+            </section>
+            <section>
+              <h3>src/features/graph/domain/findCyclePath.ts</h3>
+              <article
+                class="item"
+                id="symbol-findcyclepath"
+                data-search="findCyclePath function src/features/graph/domain/findCyclePath.ts Return one closed cycle path, optionally restricted to a subset of graph nodes. Graph (graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;, nodeIds?: readonly NodeId[] | undefined) =&gt; readonly NodeId[] | null"
+              >
+                <h4>findCyclePath</h4>
+                <p class="muted">
+                  function • <code>src/features/graph/domain/findCyclePath.ts:5:1</code>
+                </p>
+                <p>
+                  Return one closed cycle path, optionally restricted to a subset of graph nodes.
+                </p>
+                <p><strong>Export paths:</strong> <code>src/graph.ts</code></p>
+                <div>
+                  <strong>Related symbols:</strong>
+                  <ul class="chips">
+                    <li class="chip">Graph</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Signature</h5>
+                  <pre>
+(graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;, nodeIds?: readonly NodeId[] | undefined) =&gt; readonly NodeId[] | null</pre>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>graph</code></td>
+                        <td><code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code></td>
+                        <td>yes</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><code>nodeIds</code></td>
+                        <td><code>readonly NodeId[] | undefined</code></td>
+                        <td>no</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><strong>Returns:</strong> <code>readonly NodeId[] | null</code></p>
                 </div>
               </article>
             </section>
@@ -547,7 +676,7 @@
               <article
                 class="item"
                 id="symbol-findcycliccomponents"
-                data-search="findCyclicComponents function src/features/graph/domain/findCyclicComponents.ts Return strongly connected components that represent graph cycles. Graph (graph: Graph&lt;NodeData, EdgeData&gt;) =&gt; readonly (readonly string[])[]"
+                data-search="findCyclicComponents function src/features/graph/domain/findCyclicComponents.ts Return strongly connected components that represent graph cycles. Graph (graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; readonly (readonly NodeId[])[]"
               >
                 <h4>findCyclicComponents</h4>
                 <p class="muted">
@@ -564,7 +693,7 @@
                 <div>
                   <h5>Signature</h5>
                   <pre>
-(graph: Graph&lt;NodeData, EdgeData&gt;) =&gt; readonly (readonly string[])[]</pre>
+(graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; readonly (readonly NodeId[])[]</pre>
                   <table>
                     <thead>
                       <tr>
@@ -577,13 +706,13 @@
                     <tbody>
                       <tr>
                         <td><code>graph</code></td>
-                        <td><code>Graph&lt;NodeData, EdgeData&gt;</code></td>
+                        <td><code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
                     </tbody>
                   </table>
-                  <p><strong>Returns:</strong> <code>readonly (readonly string[])[]</code></p>
+                  <p><strong>Returns:</strong> <code>readonly (readonly NodeId[])[]</code></p>
                 </div>
               </article>
             </section>
@@ -592,12 +721,12 @@
               <article
                 class="item"
                 id="symbol-findstronglyconnectedcomponents"
-                data-search="findStronglyConnectedComponents function src/features/graph/domain/findStronglyConnectedComponents.ts Return strongly connected components in deterministic node order. Graph (graph: Graph&lt;NodeData, EdgeData&gt;) =&gt; readonly (readonly string[])[]"
+                data-search="findStronglyConnectedComponents function src/features/graph/domain/findStronglyConnectedComponents.ts Return strongly connected components in deterministic node order. Graph (graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; readonly (readonly NodeId[])[]"
               >
                 <h4>findStronglyConnectedComponents</h4>
                 <p class="muted">
                   function •
-                  <code>src/features/graph/domain/findStronglyConnectedComponents.ts:5:1</code>
+                  <code>src/features/graph/domain/findStronglyConnectedComponents.ts:6:1</code>
                 </p>
                 <p>Return strongly connected components in deterministic node order.</p>
                 <p><strong>Export paths:</strong> <code>src/graph.ts</code></p>
@@ -610,7 +739,7 @@
                 <div>
                   <h5>Signature</h5>
                   <pre>
-(graph: Graph&lt;NodeData, EdgeData&gt;) =&gt; readonly (readonly string[])[]</pre>
+(graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; readonly (readonly NodeId[])[]</pre>
                   <table>
                     <thead>
                       <tr>
@@ -623,13 +752,13 @@
                     <tbody>
                       <tr>
                         <td><code>graph</code></td>
-                        <td><code>Graph&lt;NodeData, EdgeData&gt;</code></td>
+                        <td><code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
                     </tbody>
                   </table>
-                  <p><strong>Returns:</strong> <code>readonly (readonly string[])[]</code></p>
+                  <p><strong>Returns:</strong> <code>readonly (readonly NodeId[])[]</code></p>
                 </div>
               </article>
             </section>
@@ -638,11 +767,11 @@
               <article
                 class="item"
                 id="symbol-getreachablenodeids"
-                data-search='getReachableNodeIds function src/features/graph/domain/getReachableNodeIds.ts Return deterministic reachable node IDs from one graph node. Graph (graph: Graph&lt;NodeData, EdgeData&gt;, startId: string, options?: { readonly direction?: "incoming" | "outgoing"; readonly includeStart?: boolean; }) =&gt; readonly string[]'
+                data-search='getReachableNodeIds function src/features/graph/domain/getReachableNodeIds.ts Return deterministic reachable node IDs from one graph node. Graph (graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;, startId: NodeId, options?: { readonly direction?: "incoming" | "outgoing"; readonly includeStart?: boolean; }) =&gt; readonly NodeId[]'
               >
                 <h4>getReachableNodeIds</h4>
                 <p class="muted">
-                  function • <code>src/features/graph/domain/getReachableNodeIds.ts:4:1</code>
+                  function • <code>src/features/graph/domain/getReachableNodeIds.ts:5:1</code>
                 </p>
                 <p>Return deterministic reachable node IDs from one graph node.</p>
                 <p><strong>Export paths:</strong> <code>src/graph.ts</code></p>
@@ -655,7 +784,7 @@
                 <div>
                   <h5>Signature</h5>
                   <pre>
-(graph: Graph&lt;NodeData, EdgeData&gt;, startId: string, options?: { readonly direction?: &quot;incoming&quot; | &quot;outgoing&quot;; readonly includeStart?: boolean; }) =&gt; readonly string[]</pre>
+(graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;, startId: NodeId, options?: { readonly direction?: &quot;incoming&quot; | &quot;outgoing&quot;; readonly includeStart?: boolean; }) =&gt; readonly NodeId[]</pre>
                   <table>
                     <thead>
                       <tr>
@@ -668,7 +797,7 @@
                     <tbody>
                       <tr>
                         <td><code>graph</code></td>
-                        <td><code>Graph&lt;NodeData, EdgeData&gt;</code></td>
+                        <td><code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
@@ -685,13 +814,13 @@
                       </tr>
                       <tr>
                         <td><code>startId</code></td>
-                        <td><code>string</code></td>
+                        <td><code>NodeId</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
                     </tbody>
                   </table>
-                  <p><strong>Returns:</strong> <code>readonly string[]</code></p>
+                  <p><strong>Returns:</strong> <code>readonly NodeId[]</code></p>
                 </div>
               </article>
             </section>
@@ -700,7 +829,7 @@
               <article
                 class="item"
                 id="symbol-reversegraph"
-                data-search="reverseGraph function src/features/graph/domain/reverseGraph.ts Reverse every directed edge while preserving identities and metadata. Graph (graph: Graph&lt;NodeData, EdgeData&gt;) =&gt; Graph&lt;NodeData, EdgeData&gt;"
+                data-search="reverseGraph function src/features/graph/domain/reverseGraph.ts Reverse every directed edge while preserving identities and metadata. Graph (graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;"
               >
                 <h4>reverseGraph</h4>
                 <p class="muted">
@@ -717,7 +846,7 @@
                 <div>
                   <h5>Signature</h5>
                   <pre>
-(graph: Graph&lt;NodeData, EdgeData&gt;) =&gt; Graph&lt;NodeData, EdgeData&gt;</pre>
+(graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</pre>
                   <table>
                     <thead>
                       <tr>
@@ -730,13 +859,16 @@
                     <tbody>
                       <tr>
                         <td><code>graph</code></td>
-                        <td><code>Graph&lt;NodeData, EdgeData&gt;</code></td>
+                        <td><code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
                     </tbody>
                   </table>
-                  <p><strong>Returns:</strong> <code>Graph&lt;NodeData, EdgeData&gt;</code></p>
+                  <p>
+                    <strong>Returns:</strong>
+                    <code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code>
+                  </p>
                 </div>
               </article>
             </section>
@@ -745,11 +877,11 @@
               <article
                 class="item"
                 id="symbol-topologicalsort"
-                data-search="topologicalSort function src/features/graph/domain/topologicalSort.ts Return a deterministic topological node order, or null when the graph is cyclic. Graph (graph: Graph&lt;NodeData, EdgeData&gt;) =&gt; readonly string[] | null"
+                data-search="topologicalSort function src/features/graph/domain/topologicalSort.ts Return a deterministic topological node order, or null when the graph is cyclic. Graph (graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; readonly NodeId[] | null"
               >
                 <h4>topologicalSort</h4>
                 <p class="muted">
-                  function • <code>src/features/graph/domain/topologicalSort.ts:4:1</code>
+                  function • <code>src/features/graph/domain/topologicalSort.ts:5:1</code>
                 </p>
                 <p>
                   Return a deterministic topological node order, or null when the graph is cyclic.
@@ -763,7 +895,8 @@
                 </div>
                 <div>
                   <h5>Signature</h5>
-                  <pre>(graph: Graph&lt;NodeData, EdgeData&gt;) =&gt; readonly string[] | null</pre>
+                  <pre>
+(graph: Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;) =&gt; readonly NodeId[] | null</pre>
                   <table>
                     <thead>
                       <tr>
@@ -776,13 +909,13 @@
                     <tbody>
                       <tr>
                         <td><code>graph</code></td>
-                        <td><code>Graph&lt;NodeData, EdgeData&gt;</code></td>
+                        <td><code>Graph&lt;NodeData, EdgeData, NodeId, EdgeId&gt;</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
                     </tbody>
                   </table>
-                  <p><strong>Returns:</strong> <code>readonly string[] | null</code></p>
+                  <p><strong>Returns:</strong> <code>readonly NodeId[] | null</code></p>
                 </div>
               </article>
             </section>
@@ -794,7 +927,7 @@
                 data-search="Graph type src/types/graph.ts  GraphEdge GraphNode"
               >
                 <h4>Graph</h4>
-                <p class="muted">type • <code>src/types/graph.ts:13:1</code></p>
+                <p class="muted">type • <code>src/types/graph.ts:19:1</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/graph.ts</code></p>
                 <div>
@@ -819,14 +952,14 @@
                     <tr>
                       <td><code>edges</code></td>
                       <td>property</td>
-                      <td><code>readonly GraphEdge&lt;EdgeData&gt;[]</code></td>
+                      <td><code>readonly GraphEdge&lt;EdgeData, NodeId, EdgeId&gt;[]</code></td>
                       <td>yes</td>
                       <td></td>
                     </tr>
                     <tr>
                       <td><code>nodes</code></td>
                       <td>property</td>
-                      <td><code>readonly GraphNode&lt;NodeData&gt;[]</code></td>
+                      <td><code>readonly GraphNode&lt;NodeData, NodeId&gt;[]</code></td>
                       <td>yes</td>
                       <td></td>
                     </tr>
@@ -839,7 +972,7 @@
                 data-search="GraphEdge type src/types/graph.ts "
               >
                 <h4>GraphEdge</h4>
-                <p class="muted">type • <code>src/types/graph.ts:6:1</code></p>
+                <p class="muted">type • <code>src/types/graph.ts:8:1</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/graph.ts</code></p>
                 <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -865,21 +998,21 @@
                     <tr>
                       <td><code>id</code></td>
                       <td>property</td>
-                      <td><code>string</code></td>
+                      <td><code>EdgeId</code></td>
                       <td>yes</td>
                       <td></td>
                     </tr>
                     <tr>
                       <td><code>source</code></td>
                       <td>property</td>
-                      <td><code>string</code></td>
+                      <td><code>NodeId</code></td>
                       <td>yes</td>
                       <td></td>
                     </tr>
                     <tr>
                       <td><code>target</code></td>
                       <td>property</td>
-                      <td><code>string</code></td>
+                      <td><code>NodeId</code></td>
                       <td>yes</td>
                       <td></td>
                     </tr>
@@ -888,11 +1021,22 @@
               </article>
               <article
                 class="item"
+                id="symbol-graphid"
+                data-search="GraphId unknown src/types/graph.ts "
+              >
+                <h4>GraphId</h4>
+                <p class="muted">unknown • <code>src/types/graph.ts:1:1</code></p>
+
+                <p><strong>Export paths:</strong> <code>src/graph.ts</code></p>
+                <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+              </article>
+              <article
+                class="item"
                 id="symbol-graphnode"
                 data-search="GraphNode type src/types/graph.ts "
               >
                 <h4>GraphNode</h4>
-                <p class="muted">type • <code>src/types/graph.ts:1:1</code></p>
+                <p class="muted">type • <code>src/types/graph.ts:3:1</code></p>
 
                 <p><strong>Export paths:</strong> <code>src/graph.ts</code></p>
                 <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -918,7 +1062,7 @@
                     <tr>
                       <td><code>id</code></td>
                       <td>property</td>
-                      <td><code>string</code></td>
+                      <td><code>NodeId</code></td>
                       <td>yes</td>
                       <td></td>
                     </tr>
@@ -951,11 +1095,16 @@
                 module_src_features_graph_domain_analysis_test_ts --&gt;
                 module_src_features_graph_domain_createGraph_ts
                 module_src_features_graph_domain_analysis_test_ts --&gt;
+                module_src_features_graph_domain_findCyclePath_ts
+                module_src_features_graph_domain_analysis_test_ts --&gt;
                 module_src_features_graph_domain_findCyclicComponents_ts
                 module_src_features_graph_domain_analysis_test_ts --&gt;
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts
                 module_src_features_graph_domain_analysis_test_ts --&gt;
                 module_src_features_graph_domain_topologicalSort_ts
+                module_src_features_graph_domain_compareGraphIds_ts[&quot;src/features/graph/domain/compareGraphIds.ts&quot;]
+                package__ankhorage_graph -.-&gt; module_src_features_graph_domain_compareGraphIds_ts
+                module_src_features_graph_domain_compareGraphIds_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_createGraph_test_ts[&quot;src/features/graph/domain/createGraph.test.ts&quot;]
                 package__ankhorage_graph -.-&gt;
                 module_src_features_graph_domain_createGraph_test_ts
@@ -963,12 +1112,19 @@
                 module_src_features_graph_domain_createGraph_ts
                 module_src_features_graph_domain_createGraph_ts[&quot;src/features/graph/domain/createGraph.ts&quot;]
                 package__ankhorage_graph -.-&gt; module_src_features_graph_domain_createGraph_ts
+                module_src_features_graph_domain_createGraph_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
                 module_src_features_graph_domain_createGraph_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_filterGraph_ts[&quot;src/features/graph/domain/filterGraph.ts&quot;]
                 package__ankhorage_graph -.-&gt; module_src_features_graph_domain_filterGraph_ts
                 module_src_features_graph_domain_filterGraph_ts --&gt;
                 module_src_features_graph_domain_createGraph_ts
                 module_src_features_graph_domain_filterGraph_ts --&gt; module_src_types_graph_ts
+                module_src_features_graph_domain_findCyclePath_ts[&quot;src/features/graph/domain/findCyclePath.ts&quot;]
+                package__ankhorage_graph -.-&gt; module_src_features_graph_domain_findCyclePath_ts
+                module_src_features_graph_domain_findCyclePath_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
+                module_src_features_graph_domain_findCyclePath_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_findCyclicComponents_ts[&quot;src/features/graph/domain/findCyclicComponents.ts&quot;]
                 package__ankhorage_graph -.-&gt;
                 module_src_features_graph_domain_findCyclicComponents_ts
@@ -980,6 +1136,8 @@
                 package__ankhorage_graph -.-&gt;
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
+                module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt;
                 module_src_features_graph_domain_reverseGraph_ts
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt;
                 module_src_types_graph_ts
@@ -987,7 +1145,13 @@
                 package__ankhorage_graph -.-&gt;
                 module_src_features_graph_domain_getReachableNodeIds_ts
                 module_src_features_graph_domain_getReachableNodeIds_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
+                module_src_features_graph_domain_getReachableNodeIds_ts --&gt;
                 module_src_types_graph_ts
+                module_src_features_graph_domain_numericGraph_test_ts[&quot;src/features/graph/domain/numericGraph.test.ts&quot;]
+                package__ankhorage_graph -.-&gt;
+                module_src_features_graph_domain_numericGraph_test_ts
+                module_src_features_graph_domain_numericGraph_test_ts --&gt; module_src_graph_ts
                 module_src_features_graph_domain_reverseGraph_ts[&quot;src/features/graph/domain/reverseGraph.ts&quot;]
                 package__ankhorage_graph -.-&gt; module_src_features_graph_domain_reverseGraph_ts
                 module_src_features_graph_domain_reverseGraph_ts --&gt;
@@ -995,6 +1159,8 @@
                 module_src_features_graph_domain_reverseGraph_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_topologicalSort_ts[&quot;src/features/graph/domain/topologicalSort.ts&quot;]
                 package__ankhorage_graph -.-&gt; module_src_features_graph_domain_topologicalSort_ts
+                module_src_features_graph_domain_topologicalSort_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
                 module_src_features_graph_domain_topologicalSort_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_traversal_test_ts[&quot;src/features/graph/domain/traversal.test.ts&quot;]
                 package__ankhorage_graph -.-&gt; module_src_features_graph_domain_traversal_test_ts
@@ -1023,36 +1189,51 @@ graph TD
   module_src_features_graph_domain_analysis_test_ts[&quot;src/features/graph/domain/analysis.test.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_analysis_test_ts
   module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_findCyclePath_ts
   module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_findCyclicComponents_ts
   module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_findStronglyConnectedComponents_ts
   module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_topologicalSort_ts
+  module_src_features_graph_domain_compareGraphIds_ts[&quot;src/features/graph/domain/compareGraphIds.ts&quot;]
+  package__ankhorage_graph -.-&gt; module_src_features_graph_domain_compareGraphIds_ts
+  module_src_features_graph_domain_compareGraphIds_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_createGraph_test_ts[&quot;src/features/graph/domain/createGraph.test.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_createGraph_test_ts
   module_src_features_graph_domain_createGraph_test_ts --&gt; module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_createGraph_ts[&quot;src/features/graph/domain/createGraph.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_createGraph_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_createGraph_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_filterGraph_ts[&quot;src/features/graph/domain/filterGraph.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_filterGraph_ts
   module_src_features_graph_domain_filterGraph_ts --&gt; module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_filterGraph_ts --&gt; module_src_types_graph_ts
+  module_src_features_graph_domain_findCyclePath_ts[&quot;src/features/graph/domain/findCyclePath.ts&quot;]
+  package__ankhorage_graph -.-&gt; module_src_features_graph_domain_findCyclePath_ts
+  module_src_features_graph_domain_findCyclePath_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
+  module_src_features_graph_domain_findCyclePath_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_findCyclicComponents_ts[&quot;src/features/graph/domain/findCyclicComponents.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_findCyclicComponents_ts
   module_src_features_graph_domain_findCyclicComponents_ts --&gt; module_src_features_graph_domain_findStronglyConnectedComponents_ts
   module_src_features_graph_domain_findCyclicComponents_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_findStronglyConnectedComponents_ts[&quot;src/features/graph/domain/findStronglyConnectedComponents.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_findStronglyConnectedComponents_ts
+  module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt; module_src_features_graph_domain_reverseGraph_ts
   module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_getReachableNodeIds_ts[&quot;src/features/graph/domain/getReachableNodeIds.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_getReachableNodeIds_ts
+  module_src_features_graph_domain_getReachableNodeIds_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_getReachableNodeIds_ts --&gt; module_src_types_graph_ts
+  module_src_features_graph_domain_numericGraph_test_ts[&quot;src/features/graph/domain/numericGraph.test.ts&quot;]
+  package__ankhorage_graph -.-&gt; module_src_features_graph_domain_numericGraph_test_ts
+  module_src_features_graph_domain_numericGraph_test_ts --&gt; module_src_graph_ts
   module_src_features_graph_domain_reverseGraph_ts[&quot;src/features/graph/domain/reverseGraph.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_reverseGraph_ts
   module_src_features_graph_domain_reverseGraph_ts --&gt; module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_reverseGraph_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_topologicalSort_ts[&quot;src/features/graph/domain/topologicalSort.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_topologicalSort_ts
+  module_src_features_graph_domain_topologicalSort_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_topologicalSort_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_traversal_test_ts[&quot;src/features/graph/domain/traversal.test.ts&quot;]
   package__ankhorage_graph -.-&gt; module_src_features_graph_domain_traversal_test_ts
@@ -1076,12 +1257,15 @@ graph TD
                 graph LR
                 module_examples_basic_usage_graph_ts[&quot;examples/basic-usage/graph.ts&quot;]
                 module_src_features_graph_domain_analysis_test_ts[&quot;src/features/graph/domain/analysis.test.ts&quot;]
+                module_src_features_graph_domain_compareGraphIds_ts[&quot;src/features/graph/domain/compareGraphIds.ts&quot;]
                 module_src_features_graph_domain_createGraph_test_ts[&quot;src/features/graph/domain/createGraph.test.ts&quot;]
                 module_src_features_graph_domain_createGraph_ts[&quot;src/features/graph/domain/createGraph.ts&quot;]
                 module_src_features_graph_domain_filterGraph_ts[&quot;src/features/graph/domain/filterGraph.ts&quot;]
+                module_src_features_graph_domain_findCyclePath_ts[&quot;src/features/graph/domain/findCyclePath.ts&quot;]
                 module_src_features_graph_domain_findCyclicComponents_ts[&quot;src/features/graph/domain/findCyclicComponents.ts&quot;]
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts[&quot;src/features/graph/domain/findStronglyConnectedComponents.ts&quot;]
                 module_src_features_graph_domain_getReachableNodeIds_ts[&quot;src/features/graph/domain/getReachableNodeIds.ts&quot;]
+                module_src_features_graph_domain_numericGraph_test_ts[&quot;src/features/graph/domain/numericGraph.test.ts&quot;]
                 module_src_features_graph_domain_reverseGraph_ts[&quot;src/features/graph/domain/reverseGraph.ts&quot;]
                 module_src_features_graph_domain_topologicalSort_ts[&quot;src/features/graph/domain/topologicalSort.ts&quot;]
                 module_src_features_graph_domain_traversal_test_ts[&quot;src/features/graph/domain/traversal.test.ts&quot;]
@@ -1091,28 +1275,43 @@ graph TD
                 module_src_features_graph_domain_analysis_test_ts --&gt;
                 module_src_features_graph_domain_createGraph_ts
                 module_src_features_graph_domain_analysis_test_ts --&gt;
+                module_src_features_graph_domain_findCyclePath_ts
+                module_src_features_graph_domain_analysis_test_ts --&gt;
                 module_src_features_graph_domain_findCyclicComponents_ts
                 module_src_features_graph_domain_analysis_test_ts --&gt;
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts
                 module_src_features_graph_domain_analysis_test_ts --&gt;
                 module_src_features_graph_domain_topologicalSort_ts
+                module_src_features_graph_domain_compareGraphIds_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_createGraph_test_ts --&gt;
                 module_src_features_graph_domain_createGraph_ts
+                module_src_features_graph_domain_createGraph_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
                 module_src_features_graph_domain_createGraph_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_filterGraph_ts --&gt;
                 module_src_features_graph_domain_createGraph_ts
                 module_src_features_graph_domain_filterGraph_ts --&gt; module_src_types_graph_ts
+                module_src_features_graph_domain_findCyclePath_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
+                module_src_features_graph_domain_findCyclePath_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_findCyclicComponents_ts --&gt;
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts
                 module_src_features_graph_domain_findCyclicComponents_ts --&gt;
                 module_src_types_graph_ts
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
+                module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt;
                 module_src_features_graph_domain_reverseGraph_ts
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt;
                 module_src_types_graph_ts module_src_features_graph_domain_getReachableNodeIds_ts
-                --&gt; module_src_types_graph_ts module_src_features_graph_domain_reverseGraph_ts
-                --&gt; module_src_features_graph_domain_createGraph_ts
+                --&gt; module_src_features_graph_domain_compareGraphIds_ts
+                module_src_features_graph_domain_getReachableNodeIds_ts --&gt;
+                module_src_types_graph_ts module_src_features_graph_domain_numericGraph_test_ts
+                --&gt; module_src_graph_ts module_src_features_graph_domain_reverseGraph_ts --&gt;
+                module_src_features_graph_domain_createGraph_ts
                 module_src_features_graph_domain_reverseGraph_ts --&gt; module_src_types_graph_ts
+                module_src_features_graph_domain_topologicalSort_ts --&gt;
+                module_src_features_graph_domain_compareGraphIds_ts
                 module_src_features_graph_domain_topologicalSort_ts --&gt; module_src_types_graph_ts
                 module_src_features_graph_domain_traversal_test_ts --&gt;
                 module_src_features_graph_domain_createGraph_ts
@@ -1129,12 +1328,15 @@ graph TD
 graph LR
   module_examples_basic_usage_graph_ts[&quot;examples/basic-usage/graph.ts&quot;]
   module_src_features_graph_domain_analysis_test_ts[&quot;src/features/graph/domain/analysis.test.ts&quot;]
+  module_src_features_graph_domain_compareGraphIds_ts[&quot;src/features/graph/domain/compareGraphIds.ts&quot;]
   module_src_features_graph_domain_createGraph_test_ts[&quot;src/features/graph/domain/createGraph.test.ts&quot;]
   module_src_features_graph_domain_createGraph_ts[&quot;src/features/graph/domain/createGraph.ts&quot;]
   module_src_features_graph_domain_filterGraph_ts[&quot;src/features/graph/domain/filterGraph.ts&quot;]
+  module_src_features_graph_domain_findCyclePath_ts[&quot;src/features/graph/domain/findCyclePath.ts&quot;]
   module_src_features_graph_domain_findCyclicComponents_ts[&quot;src/features/graph/domain/findCyclicComponents.ts&quot;]
   module_src_features_graph_domain_findStronglyConnectedComponents_ts[&quot;src/features/graph/domain/findStronglyConnectedComponents.ts&quot;]
   module_src_features_graph_domain_getReachableNodeIds_ts[&quot;src/features/graph/domain/getReachableNodeIds.ts&quot;]
+  module_src_features_graph_domain_numericGraph_test_ts[&quot;src/features/graph/domain/numericGraph.test.ts&quot;]
   module_src_features_graph_domain_reverseGraph_ts[&quot;src/features/graph/domain/reverseGraph.ts&quot;]
   module_src_features_graph_domain_topologicalSort_ts[&quot;src/features/graph/domain/topologicalSort.ts&quot;]
   module_src_features_graph_domain_traversal_test_ts[&quot;src/features/graph/domain/traversal.test.ts&quot;]
@@ -1142,20 +1344,29 @@ graph LR
   module_src_types_graph_ts[&quot;src/types/graph.ts&quot;]
   module_examples_basic_usage_graph_ts --&gt; module_dist_graph_d_ts
   module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_findCyclePath_ts
   module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_findCyclicComponents_ts
   module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_findStronglyConnectedComponents_ts
   module_src_features_graph_domain_analysis_test_ts --&gt; module_src_features_graph_domain_topologicalSort_ts
+  module_src_features_graph_domain_compareGraphIds_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_createGraph_test_ts --&gt; module_src_features_graph_domain_createGraph_ts
+  module_src_features_graph_domain_createGraph_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_createGraph_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_filterGraph_ts --&gt; module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_filterGraph_ts --&gt; module_src_types_graph_ts
+  module_src_features_graph_domain_findCyclePath_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
+  module_src_features_graph_domain_findCyclePath_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_findCyclicComponents_ts --&gt; module_src_features_graph_domain_findStronglyConnectedComponents_ts
   module_src_features_graph_domain_findCyclicComponents_ts --&gt; module_src_types_graph_ts
+  module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt; module_src_features_graph_domain_reverseGraph_ts
   module_src_features_graph_domain_findStronglyConnectedComponents_ts --&gt; module_src_types_graph_ts
+  module_src_features_graph_domain_getReachableNodeIds_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_getReachableNodeIds_ts --&gt; module_src_types_graph_ts
+  module_src_features_graph_domain_numericGraph_test_ts --&gt; module_src_graph_ts
   module_src_features_graph_domain_reverseGraph_ts --&gt; module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_reverseGraph_ts --&gt; module_src_types_graph_ts
+  module_src_features_graph_domain_topologicalSort_ts --&gt; module_src_features_graph_domain_compareGraphIds_ts
   module_src_features_graph_domain_topologicalSort_ts --&gt; module_src_types_graph_ts
   module_src_features_graph_domain_traversal_test_ts --&gt; module_src_features_graph_domain_createGraph_ts
   module_src_features_graph_domain_traversal_test_ts --&gt; module_src_features_graph_domain_filterGraph_ts
@@ -1171,12 +1382,15 @@ graph LR
                 graph LR
                 module_examples_basic_usage_graph_ts[&quot;examples/basic-usage/graph.ts&quot;]
                 module_src_features_graph_domain_analysis_test_ts[&quot;src/features/graph/domain/analysis.test.ts&quot;]
+                module_src_features_graph_domain_compareGraphIds_ts[&quot;src/features/graph/domain/compareGraphIds.ts&quot;]
                 module_src_features_graph_domain_createGraph_test_ts[&quot;src/features/graph/domain/createGraph.test.ts&quot;]
                 module_src_features_graph_domain_createGraph_ts[&quot;src/features/graph/domain/createGraph.ts&quot;]
                 module_src_features_graph_domain_filterGraph_ts[&quot;src/features/graph/domain/filterGraph.ts&quot;]
+                module_src_features_graph_domain_findCyclePath_ts[&quot;src/features/graph/domain/findCyclePath.ts&quot;]
                 module_src_features_graph_domain_findCyclicComponents_ts[&quot;src/features/graph/domain/findCyclicComponents.ts&quot;]
                 module_src_features_graph_domain_findStronglyConnectedComponents_ts[&quot;src/features/graph/domain/findStronglyConnectedComponents.ts&quot;]
                 module_src_features_graph_domain_getReachableNodeIds_ts[&quot;src/features/graph/domain/getReachableNodeIds.ts&quot;]
+                module_src_features_graph_domain_numericGraph_test_ts[&quot;src/features/graph/domain/numericGraph.test.ts&quot;]
                 module_src_features_graph_domain_reverseGraph_ts[&quot;src/features/graph/domain/reverseGraph.ts&quot;]
                 module_src_features_graph_domain_topologicalSort_ts[&quot;src/features/graph/domain/topologicalSort.ts&quot;]
                 module_src_features_graph_domain_traversal_test_ts[&quot;src/features/graph/domain/traversal.test.ts&quot;]
@@ -1188,6 +1402,9 @@ graph LR
                 module_src_features_graph_domain_filterGraph_ts --&gt; export_filterGraph
                 export_filterGraph -.-&gt; export_Graph export_filterGraph -.-&gt; export_GraphEdge
                 export_filterGraph -.-&gt; export_GraphNode
+                export_findCyclePath[&quot;findCyclePath&quot;]
+                module_src_features_graph_domain_findCyclePath_ts --&gt; export_findCyclePath
+                export_findCyclePath -.-&gt; export_Graph
                 export_findCyclicComponents[&quot;findCyclicComponents&quot;]
                 module_src_features_graph_domain_findCyclicComponents_ts --&gt;
                 export_findCyclicComponents export_findCyclicComponents -.-&gt; export_Graph
@@ -1200,8 +1417,10 @@ graph LR
                 export_Graph[&quot;Graph&quot;] module_src_types_graph_ts --&gt; export_Graph
                 export_Graph -.-&gt; export_GraphEdge export_Graph -.-&gt; export_GraphNode
                 export_GraphEdge[&quot;GraphEdge&quot;] module_src_types_graph_ts --&gt;
-                export_GraphEdge export_GraphNode[&quot;GraphNode&quot;] module_src_types_graph_ts
-                --&gt; export_GraphNode export_reverseGraph[&quot;reverseGraph&quot;]
+                export_GraphEdge export_GraphId[&quot;GraphId&quot;] module_src_types_graph_ts
+                --&gt; export_GraphId export_GraphNode[&quot;GraphNode&quot;]
+                module_src_types_graph_ts --&gt; export_GraphNode
+                export_reverseGraph[&quot;reverseGraph&quot;]
                 module_src_features_graph_domain_reverseGraph_ts --&gt; export_reverseGraph
                 export_reverseGraph -.-&gt; export_Graph
                 export_topologicalSort[&quot;topologicalSort&quot;]
@@ -1214,12 +1433,15 @@ graph LR
 graph LR
   module_examples_basic_usage_graph_ts[&quot;examples/basic-usage/graph.ts&quot;]
   module_src_features_graph_domain_analysis_test_ts[&quot;src/features/graph/domain/analysis.test.ts&quot;]
+  module_src_features_graph_domain_compareGraphIds_ts[&quot;src/features/graph/domain/compareGraphIds.ts&quot;]
   module_src_features_graph_domain_createGraph_test_ts[&quot;src/features/graph/domain/createGraph.test.ts&quot;]
   module_src_features_graph_domain_createGraph_ts[&quot;src/features/graph/domain/createGraph.ts&quot;]
   module_src_features_graph_domain_filterGraph_ts[&quot;src/features/graph/domain/filterGraph.ts&quot;]
+  module_src_features_graph_domain_findCyclePath_ts[&quot;src/features/graph/domain/findCyclePath.ts&quot;]
   module_src_features_graph_domain_findCyclicComponents_ts[&quot;src/features/graph/domain/findCyclicComponents.ts&quot;]
   module_src_features_graph_domain_findStronglyConnectedComponents_ts[&quot;src/features/graph/domain/findStronglyConnectedComponents.ts&quot;]
   module_src_features_graph_domain_getReachableNodeIds_ts[&quot;src/features/graph/domain/getReachableNodeIds.ts&quot;]
+  module_src_features_graph_domain_numericGraph_test_ts[&quot;src/features/graph/domain/numericGraph.test.ts&quot;]
   module_src_features_graph_domain_reverseGraph_ts[&quot;src/features/graph/domain/reverseGraph.ts&quot;]
   module_src_features_graph_domain_topologicalSort_ts[&quot;src/features/graph/domain/topologicalSort.ts&quot;]
   module_src_features_graph_domain_traversal_test_ts[&quot;src/features/graph/domain/traversal.test.ts&quot;]
@@ -1233,6 +1455,9 @@ graph LR
   export_filterGraph -.-&gt; export_Graph
   export_filterGraph -.-&gt; export_GraphEdge
   export_filterGraph -.-&gt; export_GraphNode
+  export_findCyclePath[&quot;findCyclePath&quot;]
+  module_src_features_graph_domain_findCyclePath_ts --&gt; export_findCyclePath
+  export_findCyclePath -.-&gt; export_Graph
   export_findCyclicComponents[&quot;findCyclicComponents&quot;]
   module_src_features_graph_domain_findCyclicComponents_ts --&gt; export_findCyclicComponents
   export_findCyclicComponents -.-&gt; export_Graph
@@ -1248,6 +1473,8 @@ graph LR
   export_Graph -.-&gt; export_GraphNode
   export_GraphEdge[&quot;GraphEdge&quot;]
   module_src_types_graph_ts --&gt; export_GraphEdge
+  export_GraphId[&quot;GraphId&quot;]
+  module_src_types_graph_ts --&gt; export_GraphId
   export_GraphNode[&quot;GraphNode&quot;]
   module_src_types_graph_ts --&gt; export_GraphNode
   export_reverseGraph[&quot;reverseGraph&quot;]
@@ -1308,6 +1535,44 @@ sequenceDiagram
   participant_createGraph-&gt;&gt;participant_assertUniqueIds: assertUniqueIds()
   participant_assertUniqueIds--&gt;&gt;participant_createGraph: return
   participant_createGraph--&gt;&gt;participant_filterGraph: return
+</pre>
+              </details>
+            </article>
+            <article
+              class="item"
+              data-search="findCyclePath sequence diagrams/sequences/find-cycle-path.mmd"
+            >
+              <h3>findCyclePath sequence</h3>
+              <p class="muted"><code>diagrams/sequences/find-cycle-path.mmd</code></p>
+              <div class="mermaid">
+                sequenceDiagram participant participant_buildAdjacency as buildAdjacency participant
+                participant_findCycleFromStart as findCycleFromStart participant
+                participant_findCyclePath as findCyclePath participant participant_visitCycle as
+                visitCycle participant_findCyclePath-&gt;&gt;participant_buildAdjacency:
+                buildAdjacency() participant_buildAdjacency--&gt;&gt;participant_findCyclePath:
+                return participant_findCyclePath-&gt;&gt;participant_findCycleFromStart:
+                findCycleFromStart() participant_findCycleFromStart-&gt;&gt;participant_visitCycle:
+                visitCycle() participant_visitCycle-&gt;&gt;participant_visitCycle: visitCycle()
+                participant_visitCycle--&gt;&gt;participant_visitCycle: return
+                participant_visitCycle--&gt;&gt;participant_findCycleFromStart: return
+                participant_findCycleFromStart--&gt;&gt;participant_findCyclePath: return
+              </div>
+              <details>
+                <summary>View Mermaid source</summary>
+                <pre>
+sequenceDiagram
+  participant participant_buildAdjacency as buildAdjacency
+  participant participant_findCycleFromStart as findCycleFromStart
+  participant participant_findCyclePath as findCyclePath
+  participant participant_visitCycle as visitCycle
+  participant_findCyclePath-&gt;&gt;participant_buildAdjacency: buildAdjacency()
+  participant_buildAdjacency--&gt;&gt;participant_findCyclePath: return
+  participant_findCyclePath-&gt;&gt;participant_findCycleFromStart: findCycleFromStart()
+  participant_findCycleFromStart-&gt;&gt;participant_visitCycle: visitCycle()
+  participant_visitCycle-&gt;&gt;participant_visitCycle: visitCycle()
+  participant_visitCycle--&gt;&gt;participant_visitCycle: return
+  participant_visitCycle--&gt;&gt;participant_findCycleFromStart: return
+  participant_findCycleFromStart--&gt;&gt;participant_findCyclePath: return
 </pre>
               </details>
             </article>
@@ -1510,6 +1775,27 @@ sequenceDiagram
           </section>
         </section>
         <section
+          id="view-src-features-graph-domain-comparegraphids-ts"
+          class="view"
+          data-view="src/features/graph/domain/compareGraphIds.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/graph/domain/compareGraphIds.ts</h2>
+            <article
+              class="item"
+              data-search="compareGraphIds src/features/graph/domain/compareGraphIds.ts Compare numeric identities numerically and text identities by stable code-unit order."
+            >
+              <h3>compareGraphIds</h3>
+              <p class="muted"><code>src/features/graph/domain/compareGraphIds.ts:4:1</code></p>
+              <p>
+                Compare numeric identities numerically and text identities by stable code-unit
+                order.
+              </p>
+            </article>
+          </section>
+        </section>
+        <section
           id="view-src-features-graph-domain-creategraph-ts"
           class="view"
           data-view="src/features/graph/domain/createGraph.ts"
@@ -1522,7 +1808,7 @@ sequenceDiagram
               data-search="createGraph src/features/graph/domain/createGraph.ts Create a deterministic graph and reject ambiguous or dangling identities."
             >
               <h3>createGraph</h3>
-              <p class="muted"><code>src/features/graph/domain/createGraph.ts:4:1</code></p>
+              <p class="muted"><code>src/features/graph/domain/createGraph.ts:5:1</code></p>
               <p>Create a deterministic graph and reject ambiguous or dangling identities.</p>
             </article>
             <article
@@ -1530,16 +1816,8 @@ sequenceDiagram
               data-search="assertUniqueIds src/features/graph/domain/createGraph.ts Reject empty or duplicate graph identities."
             >
               <h3>assertUniqueIds</h3>
-              <p class="muted"><code>src/features/graph/domain/createGraph.ts:32:1</code></p>
+              <p class="muted"><code>src/features/graph/domain/createGraph.ts:36:1</code></p>
               <p>Reject empty or duplicate graph identities.</p>
-            </article>
-            <article
-              class="item"
-              data-search="compareText src/features/graph/domain/createGraph.ts Compare graph identities without locale-dependent ordering."
-            >
-              <h3>compareText</h3>
-              <p class="muted"><code>src/features/graph/domain/createGraph.ts:43:1</code></p>
-              <p>Compare graph identities without locale-dependent ordering.</p>
             </article>
           </section>
         </section>
@@ -1558,6 +1836,50 @@ sequenceDiagram
               <h3>filterGraph</h3>
               <p class="muted"><code>src/features/graph/domain/filterGraph.ts:5:1</code></p>
               <p>Project a graph by node and edge predicates while removing dangling edges.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-graph-domain-findcyclepath-ts"
+          class="view"
+          data-view="src/features/graph/domain/findCyclePath.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/graph/domain/findCyclePath.ts</h2>
+            <article
+              class="item"
+              data-search="findCyclePath src/features/graph/domain/findCyclePath.ts Return one closed cycle path, optionally restricted to a subset of graph nodes."
+            >
+              <h3>findCyclePath</h3>
+              <p class="muted"><code>src/features/graph/domain/findCyclePath.ts:5:1</code></p>
+              <p>Return one closed cycle path, optionally restricted to a subset of graph nodes.</p>
+            </article>
+            <article
+              class="item"
+              data-search="buildAdjacency src/features/graph/domain/findCyclePath.ts Build stable outgoing adjacency while honoring the requested node subset."
+            >
+              <h3>buildAdjacency</h3>
+              <p class="muted"><code>src/features/graph/domain/findCyclePath.ts:31:1</code></p>
+              <p>Build stable outgoing adjacency while honoring the requested node subset.</p>
+            </article>
+            <article
+              class="item"
+              data-search="findCycleFromStart src/features/graph/domain/findCyclePath.ts Search one deterministic simple cycle that closes back onto the selected start node."
+            >
+              <h3>findCycleFromStart</h3>
+              <p class="muted"><code>src/features/graph/domain/findCyclePath.ts:60:1</code></p>
+              <p>
+                Search one deterministic simple cycle that closes back onto the selected start node.
+              </p>
+            </article>
+            <article
+              class="item"
+              data-search="visitCycle src/features/graph/domain/findCyclePath.ts Traverse one simple path until it closes back onto the cycle start."
+            >
+              <h3>visitCycle</h3>
+              <p class="muted"><code>src/features/graph/domain/findCyclePath.ts:68:1</code></p>
+              <p>Traverse one simple path until it closes back onto the cycle start.</p>
             </article>
           </section>
         </section>
@@ -1595,7 +1917,7 @@ sequenceDiagram
             >
               <h3>findStronglyConnectedComponents</h3>
               <p class="muted">
-                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:5:1</code>
+                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:6:1</code>
               </p>
               <p>Return strongly connected components in deterministic node order.</p>
             </article>
@@ -1605,7 +1927,7 @@ sequenceDiagram
             >
               <h3>buildAdjacency</h3>
               <p class="muted">
-                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:31:1</code>
+                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:35:1</code>
               </p>
               <p>Build sorted outgoing adjacency for graph traversal.</p>
             </article>
@@ -1615,7 +1937,7 @@ sequenceDiagram
             >
               <h3>visitPostOrder</h3>
               <p class="muted">
-                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:41:1</code>
+                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:45:1</code>
               </p>
               <p>Visit one node depth-first and append it after all descendants.</p>
             </article>
@@ -1625,19 +1947,9 @@ sequenceDiagram
             >
               <h3>collectComponent</h3>
               <p class="muted">
-                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:56:1</code>
+                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:60:1</code>
               </p>
               <p>Collect one strongly connected component from reversed adjacency.</p>
-            </article>
-            <article
-              class="item"
-              data-search="compareText src/features/graph/domain/findStronglyConnectedComponents.ts Compare graph identities without locale-dependent ordering."
-            >
-              <h3>compareText</h3>
-              <p class="muted">
-                <code>src/features/graph/domain/findStronglyConnectedComponents.ts:71:1</code>
-              </p>
-              <p>Compare graph identities without locale-dependent ordering.</p>
             </article>
           </section>
         </section>
@@ -1654,7 +1966,7 @@ sequenceDiagram
               data-search="getReachableNodeIds src/features/graph/domain/getReachableNodeIds.ts Return deterministic reachable node IDs from one graph node."
             >
               <h3>getReachableNodeIds</h3>
-              <p class="muted"><code>src/features/graph/domain/getReachableNodeIds.ts:4:1</code></p>
+              <p class="muted"><code>src/features/graph/domain/getReachableNodeIds.ts:5:1</code></p>
               <p>Return deterministic reachable node IDs from one graph node.</p>
             </article>
             <article
@@ -1663,19 +1975,9 @@ sequenceDiagram
             >
               <h3>buildAdjacency</h3>
               <p class="muted">
-                <code>src/features/graph/domain/getReachableNodeIds.ts:33:1</code>
+                <code>src/features/graph/domain/getReachableNodeIds.ts:39:1</code>
               </p>
               <p>Build sorted graph adjacency in the requested direction.</p>
-            </article>
-            <article
-              class="item"
-              data-search="compareText src/features/graph/domain/getReachableNodeIds.ts Compare graph identities without locale-dependent ordering."
-            >
-              <h3>compareText</h3>
-              <p class="muted">
-                <code>src/features/graph/domain/getReachableNodeIds.ts:50:1</code>
-              </p>
-              <p>Compare graph identities without locale-dependent ordering.</p>
             </article>
           </section>
         </section>
@@ -1710,18 +2012,10 @@ sequenceDiagram
               data-search="topologicalSort src/features/graph/domain/topologicalSort.ts Return a deterministic topological node order, or null when the graph is cyclic."
             >
               <h3>topologicalSort</h3>
-              <p class="muted"><code>src/features/graph/domain/topologicalSort.ts:4:1</code></p>
+              <p class="muted"><code>src/features/graph/domain/topologicalSort.ts:5:1</code></p>
               <p>
                 Return a deterministic topological node order, or null when the graph is cyclic.
               </p>
-            </article>
-            <article
-              class="item"
-              data-search="compareText src/features/graph/domain/topologicalSort.ts Compare graph identities without locale-dependent ordering."
-            >
-              <h3>compareText</h3>
-              <p class="muted"><code>src/features/graph/domain/topologicalSort.ts:42:1</code></p>
-              <p>Compare graph identities without locale-dependent ordering.</p>
             </article>
           </section>
         </section>

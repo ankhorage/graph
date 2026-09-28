@@ -3,7 +3,7 @@
 
 # @ankhorage/graph
 
-![license: MIT](././paradox/badges/license.svg) ![npm: v0.0.0](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
+![license: MIT](././paradox/badges/license.svg) ![npm: v0.2.0](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
 
 Canonical generic directed graph model and deterministic graph algorithms.
 
@@ -17,6 +17,7 @@ Canonical generic directed graph model and deterministic graph algorithms.
 - [Export graph](././paradox/diagrams/export-graph.mmd)
 - [createGraph sequence](././paradox/diagrams/sequences/create-graph.mmd)
 - [filterGraph sequence](././paradox/diagrams/sequences/filter-graph.mmd)
+- [findCyclePath sequence](././paradox/diagrams/sequences/find-cycle-path.mmd)
 - [findCyclicComponents sequence](././paradox/diagrams/sequences/find-cyclic-components.mmd)
 - [findStronglyConnectedComponents sequence](././paradox/diagrams/sequences/find-strongly-connected-components.mmd)
 - [getReachableNodeIds sequence](././paradox/diagrams/sequences/get-reachable-node-ids.mmd)

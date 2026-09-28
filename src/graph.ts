@@ -6,4 +6,4 @@ export { findStronglyConnectedComponents } from './features/graph/domain/findStr
 export { getReachableNodeIds } from './features/graph/domain/getReachableNodeIds.js';
 export { reverseGraph } from './features/graph/domain/reverseGraph.js';
 export { topologicalSort } from './features/graph/domain/topologicalSort.js';
-export type { Graph, GraphEdge, GraphNode } from './types/graph.js';
+export type { Graph, GraphEdge, GraphId, GraphNode } from './types/graph.js';

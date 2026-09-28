@@ -8,23 +8,23 @@
     "modulePath": "src/features/graph/domain/createGraph.ts",
     "sourceLocation": {
       "filePath": "src/features/graph/domain/createGraph.ts",
-      "line": 4,
+      "line": 5,
       "column": 1
     },
     "exportPaths": ["src/graph.ts"],
     "relatedSymbols": ["Graph"],
     "signatures": [
       {
-        "label": "(input: Graph<NodeData, EdgeData>) => Graph<NodeData, EdgeData>",
+        "label": "(input: Graph<NodeData, EdgeData, NodeId, EdgeId>) => Graph<NodeData, EdgeData, NodeId, EdgeId>",
         "parameters": [
           {
             "name": "input",
-            "type": "Graph<NodeData, EdgeData>",
+            "type": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "Graph<NodeData, EdgeData>",
+        "returnType": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
         "returnDescription": null
       }
     ],
@@ -47,22 +47,60 @@
     "relatedSymbols": ["Graph", "GraphEdge", "GraphNode"],
     "signatures": [
       {
-        "label": "(graph: Graph<NodeData, EdgeData>, options: { readonly node?: (node: GraphNode<NodeData>) => boolean; readonly edge?: (edge: GraphEdge<EdgeData>) => boolean; }) => Graph<NodeData, EdgeData>",
+        "label": "(graph: Graph<NodeData, EdgeData, NodeId, EdgeId>, options: { readonly node?: (node: GraphNode<NodeData, NodeId>) => boolean; readonly edge?: (edge: GraphEdge<EdgeData, NodeId, EdgeId>) => boolean; }) => Graph<NodeData, EdgeData, NodeId, EdgeId>",
         "parameters": [
           {
             "name": "graph",
-            "type": "Graph<NodeData, EdgeData>",
+            "type": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
             "required": true,
             "description": null
           },
           {
             "name": "options",
-            "type": "{ readonly node?: (node: GraphNode<NodeData>) => boolean; readonly edge?: (edge: GraphEdge<EdgeData>) => boolean; }",
+            "type": "{ readonly node?: (node: GraphNode<NodeData, NodeId>) => boolean; readonly edge?: (edge: GraphEdge<EdgeData, NodeId, EdgeId>) => boolean; }",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "Graph<NodeData, EdgeData>",
+        "returnType": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "findCyclePath",
+    "description": "Return one closed cycle path, optionally restricted to a subset of graph nodes.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/graph/domain/findCyclePath.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graph/domain/findCyclePath.ts",
+      "line": 5,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": ["Graph"],
+    "signatures": [
+      {
+        "label": "(graph: Graph<NodeData, EdgeData, NodeId, EdgeId>, nodeIds?: readonly NodeId[] | undefined) => readonly NodeId[] | null",
+        "parameters": [
+          {
+            "name": "graph",
+            "type": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
+            "required": true,
+            "description": null
+          },
+          {
+            "name": "nodeIds",
+            "type": "readonly NodeId[] | undefined",
+            "required": false,
+            "description": null
+          }
+        ],
+        "returnType": "readonly NodeId[] | null",
         "returnDescription": null
       }
     ],
@@ -85,16 +123,16 @@
     "relatedSymbols": ["Graph"],
     "signatures": [
       {
-        "label": "(graph: Graph<NodeData, EdgeData>) => readonly (readonly string[])[]",
+        "label": "(graph: Graph<NodeData, EdgeData, NodeId, EdgeId>) => readonly (readonly NodeId[])[]",
         "parameters": [
           {
             "name": "graph",
-            "type": "Graph<NodeData, EdgeData>",
+            "type": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "readonly (readonly string[])[]",
+        "returnType": "readonly (readonly NodeId[])[]",
         "returnDescription": null
       }
     ],
@@ -110,23 +148,23 @@
     "modulePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
     "sourceLocation": {
       "filePath": "src/features/graph/domain/findStronglyConnectedComponents.ts",
-      "line": 5,
+      "line": 6,
       "column": 1
     },
     "exportPaths": ["src/graph.ts"],
     "relatedSymbols": ["Graph"],
     "signatures": [
       {
-        "label": "(graph: Graph<NodeData, EdgeData>) => readonly (readonly string[])[]",
+        "label": "(graph: Graph<NodeData, EdgeData, NodeId, EdgeId>) => readonly (readonly NodeId[])[]",
         "parameters": [
           {
             "name": "graph",
-            "type": "Graph<NodeData, EdgeData>",
+            "type": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "readonly (readonly string[])[]",
+        "returnType": "readonly (readonly NodeId[])[]",
         "returnDescription": null
       }
     ],
@@ -142,18 +180,18 @@
     "modulePath": "src/features/graph/domain/getReachableNodeIds.ts",
     "sourceLocation": {
       "filePath": "src/features/graph/domain/getReachableNodeIds.ts",
-      "line": 4,
+      "line": 5,
       "column": 1
     },
     "exportPaths": ["src/graph.ts"],
     "relatedSymbols": ["Graph"],
     "signatures": [
       {
-        "label": "(graph: Graph<NodeData, EdgeData>, startId: string, options?: { readonly direction?: \"incoming\" | \"outgoing\"; readonly includeStart?: boolean; }) => readonly string[]",
+        "label": "(graph: Graph<NodeData, EdgeData, NodeId, EdgeId>, startId: NodeId, options?: { readonly direction?: \"incoming\" | \"outgoing\"; readonly includeStart?: boolean; }) => readonly NodeId[]",
         "parameters": [
           {
             "name": "graph",
-            "type": "Graph<NodeData, EdgeData>",
+            "type": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
             "required": true,
             "description": null
           },
@@ -165,12 +203,12 @@
           },
           {
             "name": "startId",
-            "type": "string",
+            "type": "NodeId",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "readonly string[]",
+        "returnType": "readonly NodeId[]",
         "returnDescription": null
       }
     ],
@@ -186,7 +224,7 @@
     "modulePath": "src/types/graph.ts",
     "sourceLocation": {
       "filePath": "src/types/graph.ts",
-      "line": 13,
+      "line": 19,
       "column": 1
     },
     "exportPaths": ["src/graph.ts"],
@@ -196,14 +234,14 @@
       {
         "name": "edges",
         "kind": "property",
-        "type": "readonly GraphEdge<EdgeData>[]",
+        "type": "readonly GraphEdge<EdgeData, NodeId, EdgeId>[]",
         "required": true,
         "description": null
       },
       {
         "name": "nodes",
         "kind": "property",
-        "type": "readonly GraphNode<NodeData>[]",
+        "type": "readonly GraphNode<NodeData, NodeId>[]",
         "required": true,
         "description": null
       }
@@ -219,7 +257,7 @@
     "modulePath": "src/types/graph.ts",
     "sourceLocation": {
       "filePath": "src/types/graph.ts",
-      "line": 6,
+      "line": 8,
       "column": 1
     },
     "exportPaths": ["src/graph.ts"],
@@ -236,25 +274,43 @@
       {
         "name": "id",
         "kind": "property",
-        "type": "string",
+        "type": "EdgeId",
         "required": true,
         "description": null
       },
       {
         "name": "source",
         "kind": "property",
-        "type": "string",
+        "type": "NodeId",
         "required": true,
         "description": null
       },
       {
         "name": "target",
         "kind": "property",
-        "type": "string",
+        "type": "NodeId",
         "required": true,
         "description": null
       }
     ],
+    "structuredRows": []
+  },
+  {
+    "name": "GraphId",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/types/graph.ts",
+    "sourceLocation": {
+      "filePath": "src/types/graph.ts",
+      "line": 1,
+      "column": 1
+    },
+    "exportPaths": ["src/graph.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
     "structuredRows": []
   },
   {
@@ -266,7 +322,7 @@
     "modulePath": "src/types/graph.ts",
     "sourceLocation": {
       "filePath": "src/types/graph.ts",
-      "line": 1,
+      "line": 3,
       "column": 1
     },
     "exportPaths": ["src/graph.ts"],
@@ -283,7 +339,7 @@
       {
         "name": "id",
         "kind": "property",
-        "type": "string",
+        "type": "NodeId",
         "required": true,
         "description": null
       }
@@ -306,16 +362,16 @@
     "relatedSymbols": ["Graph"],
     "signatures": [
       {
-        "label": "(graph: Graph<NodeData, EdgeData>) => Graph<NodeData, EdgeData>",
+        "label": "(graph: Graph<NodeData, EdgeData, NodeId, EdgeId>) => Graph<NodeData, EdgeData, NodeId, EdgeId>",
         "parameters": [
           {
             "name": "graph",
-            "type": "Graph<NodeData, EdgeData>",
+            "type": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "Graph<NodeData, EdgeData>",
+        "returnType": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
         "returnDescription": null
       }
     ],
@@ -331,23 +387,23 @@
     "modulePath": "src/features/graph/domain/topologicalSort.ts",
     "sourceLocation": {
       "filePath": "src/features/graph/domain/topologicalSort.ts",
-      "line": 4,
+      "line": 5,
       "column": 1
     },
     "exportPaths": ["src/graph.ts"],
     "relatedSymbols": ["Graph"],
     "signatures": [
       {
-        "label": "(graph: Graph<NodeData, EdgeData>) => readonly string[] | null",
+        "label": "(graph: Graph<NodeData, EdgeData, NodeId, EdgeId>) => readonly NodeId[] | null",
         "parameters": [
           {
             "name": "graph",
-            "type": "Graph<NodeData, EdgeData>",
+            "type": "Graph<NodeData, EdgeData, NodeId, EdgeId>",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "readonly string[] | null",
+        "returnType": "readonly NodeId[] | null",
         "returnDescription": null
       }
     ],
