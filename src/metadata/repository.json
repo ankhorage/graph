@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "library",
+  "title": "Ankhorage Graph",
+  "summary": "Provides a canonical generic directed graph model and deterministic graph algorithms.",
+  "purpose": "Give packages a reusable graph boundary without coupling graph data or algorithms to rendering, project detection, or provider APIs.",
+  "domain": "directed graph algorithms",
+  "responsibilities": [
+    "Define generic directed graph data and deterministic graph algorithms.",
+    "Expose graph operations for compatible external consumers."
+  ],
+  "boundaries": [
+    "Does not depend on Cytoscape, project detection, package managers, GitHub, dependency analysis, or rendering concerns.",
+    "Does not own application-specific graph semantics."
+  ],
+  "audience": [
+    "Packages and applications that need portable directed graph data and algorithms."
+  ],
+  "useCases": [
+    "Model and analyze directed graph relationships independently of a UI or provider."
+  ],
+  "architecture": {
+    "role": "Portable directed-graph model and algorithm library.",
+    "invariants": [
+      "Graph algorithms remain deterministic.",
+      "The package remains independent of rendering and provider technology."
+    ]
+  },
+  "constraints": {
+    "limitations": [
+      "Application-specific graph meaning belongs to the consuming package."
+    ]
+  }
+}
