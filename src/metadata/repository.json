@@ -13,12 +13,8 @@
     "Does not depend on Cytoscape, project detection, package managers, GitHub, dependency analysis, or rendering concerns.",
     "Does not own application-specific graph semantics."
   ],
-  "audience": [
-    "Packages and applications that need portable directed graph data and algorithms."
-  ],
-  "useCases": [
-    "Model and analyze directed graph relationships independently of a UI or provider."
-  ],
+  "audience": ["Packages and applications that need portable directed graph data and algorithms."],
+  "useCases": ["Model and analyze directed graph relationships independently of a UI or provider."],
   "architecture": {
     "role": "Portable directed-graph model and algorithm library.",
     "invariants": [
@@ -27,8 +23,6 @@
     ]
   },
   "constraints": {
-    "limitations": [
-      "Application-specific graph meaning belongs to the consuming package."
-    ]
+    "limitations": ["Application-specific graph meaning belongs to the consuming package."]
   }
 }
