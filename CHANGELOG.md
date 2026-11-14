@@ -1,5 +1,11 @@
 # @ankhorage/graph
 
+## 0.3.1
+
+### Patch Changes
+
+- 74c78d6: Add canonical repository metadata for package discovery and documentation.
+
 ## 0.3.0
 
 ### Minor Changes
