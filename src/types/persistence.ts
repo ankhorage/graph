@@ -137,7 +137,10 @@ export interface GraphPersistencePort {
   openAsync(): Promise<GraphPersistenceSession>;
 }
 
-/*** One provider-neutral behavior that every persistence adapter must prove. */
+/***
+ * One provider-neutral behavior that every persistence adapter must prove. These are executable
+ * adapter-test requirements, not behavior exercised by this provider-neutral package itself.
+ */
 export interface GraphPersistenceConformanceCase {
   readonly id:
     | 'stable-edge-identity'

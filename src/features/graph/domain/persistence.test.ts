@@ -60,6 +60,14 @@ test('graph persistence rejects non-portable storage values and invalid graph re
     assertGraphStorageData({ properties: {}, document: { sparse: new Array(2) } }),
   ).toThrow('sparse or extended arrays');
   expect(() =>
+    assertGraphStorageData({ properties: {}, document: { [Symbol('hidden')]: 'value' } }),
+  ).toThrow('enumerable string keys');
+  const documentWithHiddenProperty = { visible: 'value' };
+  Object.defineProperty(documentWithHiddenProperty, 'hidden', { value: 'value' });
+  expect(() =>
+    assertGraphStorageData({ properties: {}, document: documentWithHiddenProperty }),
+  ).toThrow('enumerable string keys');
+  expect(() =>
     assertGraphPersistenceOperation({
       kind: 'mutate',
       mutations: [
@@ -114,9 +122,27 @@ test('graph persistence rejects ambiguous and unbounded lookup and traversal req
       pageSize: graphPersistenceTraversalLimits.pageSize + 1,
     }),
   ).toThrow('maxDepth');
+  expect(() =>
+    assertGraphPersistenceOperation({
+      kind: 'traverse',
+      startNodeIds: ['person-1'],
+      direction: 'sideways',
+      maxDepth: 1,
+      pageSize: 1,
+    }),
+  ).toThrow('traversal is invalid');
+  expect(() =>
+    assertGraphPersistenceOperation({
+      kind: 'traverse',
+      startNodeIds: ['person-1'],
+      direction: 1,
+      maxDepth: 1,
+      pageSize: 1,
+    }),
+  ).toThrow('traversal is invalid');
 });
 
-test('graph persistence publishes every provider conformance case required by the port', () => {
+test('graph persistence publishes adapter conformance requirements without claiming provider execution', () => {
   expect(graphPersistenceConformanceCases.map(({ id }) => id)).toEqual([
     'stable-edge-identity',
     'atomic-rollback',

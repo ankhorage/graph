@@ -56,7 +56,7 @@ function assertStoredGraphEdge(edge: unknown): void {
 
 /*** Validate bounded traversal inputs before provider-specific execution. */
 function assertTraversalOperation(operation: Record<string, unknown>): void {
-  if (!Array.isArray(operation.startNodeIds) || typeof operation.direction !== 'string') {
+  if (!Array.isArray(operation.startNodeIds) || !isGraphTraversalDirection(operation.direction)) {
     throw new Error('Graph persistence traversal is invalid.');
   }
   assertDistinctIdentifiers(operation.startNodeIds, 'traversal start node IDs');
@@ -78,6 +78,11 @@ function assertTraversalOperation(operation: Record<string, unknown>): void {
     assertDistinctIdentifiers(operation.types, 'traversal types');
   }
   if (operation.cursor !== undefined) assertIdentifier(operation.cursor, 'traversal cursor');
+}
+
+/*** Restrict runtime traversal directions to the portable graph contract. */
+function isGraphTraversalDirection(value: unknown): boolean {
+  return value === 'incoming' || value === 'outgoing' || value === 'both';
 }
 
 /*** Reject empty or duplicate values in an identifier collection. */

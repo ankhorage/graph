@@ -72,6 +72,13 @@ function assertPlainRecord(value: unknown, path: string): asserts value is Recor
   if (prototype !== Object.prototype && prototype !== null) {
     throw new Error(`Graph storage ${path} must be a plain object.`);
   }
+  if (
+    Reflect.ownKeys(value).some(
+      (key) => typeof key !== 'string' || !Object.prototype.propertyIsEnumerable.call(value, key),
+    )
+  ) {
+    throw new Error(`Graph storage ${path} must contain only enumerable string keys.`);
+  }
 }
 
 /*** Reject JSON array holes and extra own properties that JSON cannot round-trip losslessly. */
