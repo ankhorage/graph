@@ -2,7 +2,7 @@
   "name": "@ankhorage/graph",
   "version": "0.3.1",
   "type": "module",
-  "description": "Canonical generic directed graph model and deterministic graph algorithms.",
+  "description": "Canonical generic directed graph model, deterministic algorithms, and provider-neutral persistence port.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -31,6 +31,10 @@
     ".": {
       "types": "./dist/graph.d.ts",
       "import": "./dist/graph.js"
+    },
+    "./persistence": {
+      "types": "./dist/persistence.d.ts",
+      "import": "./dist/persistence.js"
     },
     "./package.json": "./package.json"
   },

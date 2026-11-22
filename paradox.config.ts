@@ -8,7 +8,7 @@ export default defineParadoxConfig({
   },
   package: {
     root: '.',
-    entrypoints: ['src/graph.ts'],
+    entrypoints: ['src/graph.ts', 'src/persistence.ts'],
   },
   output: { dir: './paradox' },
 });
