@@ -4,7 +4,7 @@
 
 Package: `@ankhorage/graph`
 
-Canonical generic directed graph model and deterministic graph algorithms for Ankhorage packages and compatible external consumers.
+Canonical generic directed graph model, deterministic algorithms, and provider-neutral persistence port for Ankhorage packages and compatible external consumers.
 
 ## Current architecture only
 
@@ -16,4 +16,4 @@ Before changing any file, read this file and inspect `.agents/skills/`. Load the
 
 ## Scope
 
-This package owns generic graph data and algorithms only. It must not depend on Cytoscape, project detection, package managers, GitHub, dependency analysis, or rendering concerns.
+This package owns generic graph data, algorithms, and provider-neutral persistence contracts only. It must not depend on Cytoscape, project detection, package managers, GitHub, dependency analysis, rendering concerns, or provider clients, credentials, SDKs, and query languages.

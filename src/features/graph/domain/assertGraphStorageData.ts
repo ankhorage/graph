@@ -1,12 +1,8 @@
-import type {
-  GraphJsonObject,
-  GraphJsonValue,
-  GraphScalar,
-  GraphStorageData,
-} from '../../../types/persistence.js';
+import type { GraphScalar, GraphStorageData } from '../../../types/persistence.js';
 
 /*** Reject storage data that cannot round-trip through the portable persistence profile. */
-export function assertGraphStorageData(data: GraphStorageData): void {
+export function assertGraphStorageData(data: unknown): asserts data is GraphStorageData {
+  assertPlainRecord(data, 'storage data');
   assertScalarRecord(data.properties, 'properties');
   if (data.document !== undefined) {
     assertJsonRecord(data.document, 'document', new WeakSet());
@@ -14,7 +10,7 @@ export function assertGraphStorageData(data: GraphStorageData): void {
 }
 
 /*** Validate a record that providers can filter and index without JSON coercion. */
-function assertScalarRecord(record: Readonly<Record<string, GraphScalar>>, path: string): void {
+function assertScalarRecord(record: unknown, path: string): void {
   assertPlainRecord(record, path);
   for (const [key, value] of Object.entries(record)) {
     assertPropertyKey(key, path);
@@ -23,7 +19,7 @@ function assertScalarRecord(record: Readonly<Record<string, GraphScalar>>, path:
 }
 
 /*** Validate a structured document while rejecting cyclic and non-JSON values. */
-function assertJsonRecord(record: GraphJsonObject, path: string, ancestors: WeakSet<object>): void {
+function assertJsonRecord(record: unknown, path: string, ancestors: WeakSet<object>): void {
   assertPlainRecord(record, path);
   if (ancestors.has(record)) throw new Error(`Graph storage ${path} must not contain cycles.`);
   ancestors.add(record);
@@ -35,7 +31,7 @@ function assertJsonRecord(record: GraphJsonObject, path: string, ancestors: Weak
 }
 
 /*** Validate one lossless JSON-compatible graph document value. */
-function assertJsonValue(value: GraphJsonValue, path: string, ancestors: WeakSet<object>): void {
+function assertJsonValue(value: unknown, path: string, ancestors: WeakSet<object>): void {
   if (value === null) return;
   if (typeof value === 'string' || typeof value === 'boolean' || typeof value === 'number') {
     assertScalar(value, path);
@@ -44,6 +40,7 @@ function assertJsonValue(value: GraphJsonValue, path: string, ancestors: WeakSet
   if (isGraphJsonArray(value)) {
     if (ancestors.has(value)) throw new Error(`Graph storage ${path} must not contain cycles.`);
     ancestors.add(value);
+    assertDenseJsonArray(value, path);
     value.forEach((item, index) => assertJsonValue(item, `${path}[${index}]`, ancestors));
     ancestors.delete(value);
     return;
@@ -52,22 +49,40 @@ function assertJsonValue(value: GraphJsonValue, path: string, ancestors: WeakSet
 }
 
 /*** Identify a JSON array without widening readonly graph document values. */
-function isGraphJsonArray(value: GraphJsonValue): value is readonly GraphJsonValue[] {
+function isGraphJsonArray(value: unknown): value is readonly unknown[] {
   return Array.isArray(value);
 }
 
 /*** Reject non-portable numeric values at the persistence boundary. */
-function assertScalar(value: GraphScalar, path: string): void {
+function assertScalar(value: unknown, path: string): asserts value is GraphScalar {
+  if (typeof value !== 'string' && typeof value !== 'boolean' && typeof value !== 'number') {
+    throw new Error(`Graph storage ${path} must contain a string, boolean, or finite number.`);
+  }
   if (typeof value === 'number' && !Number.isFinite(value)) {
     throw new Error(`Graph storage ${path} must contain finite numbers.`);
   }
 }
 
 /*** Restrict documents to JSON object records without prototype-dependent behavior. */
-function assertPlainRecord(value: object, path: string): void {
+function assertPlainRecord(value: unknown, path: string): asserts value is Record<string, unknown> {
+  if (value === null || typeof value !== 'object' || Array.isArray(value)) {
+    throw new Error(`Graph storage ${path} must be a plain object.`);
+  }
   const prototype = Reflect.getPrototypeOf(value);
   if (prototype !== Object.prototype && prototype !== null) {
     throw new Error(`Graph storage ${path} must be a plain object.`);
+  }
+}
+
+/*** Reject JSON array holes and extra own properties that JSON cannot round-trip losslessly. */
+function assertDenseJsonArray(value: readonly unknown[], path: string): void {
+  const expectedKeys = new Set([
+    ...Array.from({ length: value.length }, (_, index) => String(index)),
+    'length',
+  ]);
+  const keys = Reflect.ownKeys(value);
+  if (keys.length !== expectedKeys.size || keys.some((key) => !expectedKeys.has(String(key)))) {
+    throw new Error(`Graph storage ${path} must not contain sparse or extended arrays.`);
   }
 }
 

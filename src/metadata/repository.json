@@ -2,24 +2,31 @@
   "schemaVersion": 1,
   "kind": "library",
   "title": "Ankhorage Graph",
-  "summary": "Provides a canonical generic directed graph model and deterministic graph algorithms.",
-  "purpose": "Give packages a reusable graph boundary without coupling graph data or algorithms to rendering, project detection, or provider APIs.",
-  "domain": "directed graph algorithms",
+  "summary": "Provides a canonical generic directed graph model, deterministic algorithms, and a provider-neutral persistence port.",
+  "purpose": "Give packages reusable graph data, algorithms, and persistence contracts without coupling them to rendering, project detection, or provider APIs.",
+  "domain": "directed graph data, algorithms, and persistence contracts",
   "responsibilities": [
     "Define generic directed graph data and deterministic graph algorithms.",
-    "Expose graph operations for compatible external consumers."
+    "Define provider-neutral graph persistence contracts for compatible external consumers.",
+    "Expose graph operations through deliberate public entrypoints."
   ],
   "boundaries": [
     "Does not depend on Cytoscape, project detection, package managers, GitHub, dependency analysis, or rendering concerns.",
     "Does not own application-specific graph semantics."
   ],
-  "audience": ["Packages and applications that need portable directed graph data and algorithms."],
-  "useCases": ["Model and analyze directed graph relationships independently of a UI or provider."],
+  "audience": [
+    "Packages and applications that need portable directed graph data, algorithms, or persistence contracts."
+  ],
+  "useCases": [
+    "Model and analyze directed graph relationships independently of a UI or provider.",
+    "Implement provider adapters against one portable persistence contract."
+  ],
   "architecture": {
-    "role": "Portable directed-graph model and algorithm library.",
+    "role": "Portable directed-graph model, algorithm, and persistence-contract library.",
     "invariants": [
       "Graph algorithms remain deterministic.",
-      "The package remains independent of rendering and provider technology."
+      "The package remains independent of rendering and provider technology.",
+      "Persistence contracts never include provider clients, credentials, or query languages."
     ]
   },
   "constraints": {

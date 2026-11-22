@@ -136,3 +136,15 @@ export interface GraphPersistenceSession {
 export interface GraphPersistencePort {
   openAsync(): Promise<GraphPersistenceSession>;
 }
+
+/*** One provider-neutral behavior that every persistence adapter must prove. */
+export interface GraphPersistenceConformanceCase {
+  readonly id:
+    | 'stable-edge-identity'
+    | 'atomic-rollback'
+    | 'node-delete-safety'
+    | 'idempotent-mutation-count'
+    | 'traversal-inclusion-and-order'
+    | 'cursor-consistency';
+  readonly requirement: string;
+}

@@ -1,7 +1,9 @@
 import { expect, test } from 'bun:test';
 
+import { graphPersistenceTraversalLimits } from '../constants/persistence.js';
 import { assertGraphPersistenceOperation } from './assertGraphPersistenceOperation.js';
 import { assertGraphStorageData } from './assertGraphStorageData.js';
+import { graphPersistenceConformanceCases } from './graphPersistenceConformanceCases.js';
 
 test('graph persistence accepts canonical stored mutations', () => {
   expect(() =>
@@ -52,6 +54,12 @@ test('graph persistence rejects non-portable storage values and invalid graph re
     assertGraphStorageData({ properties: { invalid: Number.POSITIVE_INFINITY } }),
   ).toThrow('finite numbers');
   expect(() =>
+    assertGraphStorageData(JSON.parse('{"properties":{"role":{"nested":true},"validTo":null}}')),
+  ).toThrow('string, boolean, or finite number');
+  expect(() =>
+    assertGraphStorageData({ properties: {}, document: { sparse: new Array(2) } }),
+  ).toThrow('sparse or extended arrays');
+  expect(() =>
     assertGraphPersistenceOperation({
       kind: 'mutate',
       mutations: [
@@ -82,6 +90,9 @@ test('graph persistence rejects non-portable storage values and invalid graph re
 });
 
 test('graph persistence rejects ambiguous and unbounded lookup and traversal requests', () => {
+  expect(() => assertGraphPersistenceOperation({ kind: 'mutate', mutations: null })).toThrow(
+    'mutations must be an array',
+  );
   expect(() =>
     assertGraphPersistenceOperation({ kind: 'nodes', nodeIds: ['person-1', 'person-1'] }),
   ).toThrow('must be unique');
@@ -94,4 +105,24 @@ test('graph persistence rejects ambiguous and unbounded lookup and traversal req
       pageSize: 0,
     }),
   ).toThrow('pageSize');
+  expect(() =>
+    assertGraphPersistenceOperation({
+      kind: 'traverse',
+      startNodeIds: ['person-1'],
+      direction: 'outgoing',
+      maxDepth: graphPersistenceTraversalLimits.maxDepth + 1,
+      pageSize: graphPersistenceTraversalLimits.pageSize + 1,
+    }),
+  ).toThrow('maxDepth');
+});
+
+test('graph persistence publishes every provider conformance case required by the port', () => {
+  expect(graphPersistenceConformanceCases.map(({ id }) => id)).toEqual([
+    'stable-edge-identity',
+    'atomic-rollback',
+    'node-delete-safety',
+    'idempotent-mutation-count',
+    'traversal-inclusion-and-order',
+    'cursor-consistency',
+  ]);
 });
