@@ -1,5 +1,11 @@
 # @ankhorage/graph
 
+## 0.4.0
+
+### Minor Changes
+
+- b420564: Add the provider-neutral `@ankhorage/graph/persistence` storage port and optional graph labels and edge types.
+
 ## 0.3.1
 
 ### Patch Changes

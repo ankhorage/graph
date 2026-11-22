@@ -1,6 +1,6 @@
 {
   "name": "@ankhorage/graph",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "type": "module",
   "description": "Canonical generic directed graph model, deterministic algorithms, and provider-neutral persistence port.",
   "license": "MIT",
