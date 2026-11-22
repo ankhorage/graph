@@ -32,6 +32,10 @@
       "types": "./dist/graph.d.ts",
       "import": "./dist/graph.js"
     },
+    "./persistence": {
+      "types": "./dist/persistence.d.ts",
+      "import": "./dist/persistence.js"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {

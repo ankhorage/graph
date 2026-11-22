@@ -3,6 +3,7 @@ export type GraphId = number | string;
 export interface GraphNode<NodeData = unknown, NodeId extends GraphId = string> {
   readonly id: NodeId;
   readonly data: NodeData;
+  readonly labels?: readonly string[];
 }
 
 export interface GraphEdge<
@@ -14,6 +15,7 @@ export interface GraphEdge<
   readonly source: NodeId;
   readonly target: NodeId;
   readonly data: EdgeData;
+  readonly type?: string;
 }
 
 export interface Graph<

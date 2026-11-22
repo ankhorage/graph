@@ -1,0 +1,25 @@
+export { assertGraphPersistenceOperation } from './features/graph/domain/assertGraphPersistenceOperation.js';
+export { assertGraphStorageData } from './features/graph/domain/assertGraphStorageData.js';
+export type {
+  GraphJsonObject,
+  GraphJsonValue,
+  GraphPersistenceCapability,
+  GraphPersistenceMutation,
+  GraphPersistenceMutationOperation,
+  GraphPersistenceMutationResult,
+  GraphPersistenceNodesOperation,
+  GraphPersistenceNodesResult,
+  GraphPersistenceOperation,
+  GraphPersistencePort,
+  GraphPersistenceResult,
+  GraphPersistenceSession,
+  GraphPersistenceTraversalOperation,
+  GraphPersistenceTraversalResult,
+  GraphPersistenceUnsupportedResult,
+  GraphScalar,
+  GraphStorageData,
+  GraphTraversalDirection,
+  StoredGraph,
+  StoredGraphEdge,
+  StoredGraphNode,
+} from './types/persistence.js';

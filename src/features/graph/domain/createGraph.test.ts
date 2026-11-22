@@ -34,4 +34,14 @@ describe('createGraph', () => {
       }),
     ).toThrow('references an unknown endpoint');
   });
+
+  test('preserves optional graph labels and edge types', () => {
+    const graph = createGraph({
+      nodes: [{ id: 'a', labels: ['Package'], data: {} }],
+      edges: [{ id: 'a-a', source: 'a', target: 'a', type: 'DEPENDS_ON', data: {} }],
+    });
+
+    expect(graph.nodes[0]?.labels).toEqual(['Package']);
+    expect(graph.edges[0]?.type).toBe('DEPENDS_ON');
+  });
 });

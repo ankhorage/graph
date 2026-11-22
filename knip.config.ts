@@ -3,6 +3,7 @@ import { createKnipConfig } from '@ankhorage/devtools/knip';
 export default createKnipConfig({
   entry: [
     'src/graph.ts',
+    'src/persistence.ts',
     'examples/**/*.ts',
     'paradox.config.ts',
     'eslint.config.mjs',
